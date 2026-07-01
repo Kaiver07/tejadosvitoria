@@ -14,27 +14,111 @@ import { site } from '../config/site.config';
 >
 
   <!-- ======================== HERO ======================== -->
-  <section class="bg-brand-primary text-white">
-    <div class="section-container py-16 lg:py-24">
-      <div class="max-w-2xl">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-          Reparación e Instalación de Tejados en Vitoria-Gasteiz
-        </h1>
-        <p class="text-lg text-gray-300 mb-8">
-          {site.yearsExperience} años de experiencia en tejados y cubiertas en Álava.
-          Presupuesto gratuito · Garantía por escrito · Urgencias 24h
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href={`tel:${site.phone}`} class="btn-cta text-lg py-4 px-8">
-            ☎ Llamar: {site.phoneDisplay}
-          </a>
-          <a href="#contacto" class="btn-outline-white text-lg py-4 px-8">
-            Presupuesto Gratis
-          </a>
+  <section class="relative bg-brand-primary text-white overflow-hidden min-h-[580px] flex items-center">
+    <!-- Imagen de fondo con overlay -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/reparacion-tejados-vitoria.jpg');"
+      aria-hidden="true"
+    ></div>
+    <div class="absolute inset-0 bg-brand-primary/82" aria-hidden="true"></div>
+
+    <div class="relative z-10 section-container w-full py-14 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+        <!-- Columna izquierda: texto + CTAs -->
+        <div>
+          <!-- Badge urgencia -->
+          <div class="inline-flex items-center gap-2 bg-brand-secondary/20 border border-brand-secondary/50 text-brand-accent text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+            <span class="w-2 h-2 rounded-full bg-brand-secondary animate-pulse"></span>
+            Urgencias 24h · 7 días
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-5">
+            Tejados<br />
+            <span class="text-brand-secondary">Vitoria-Gasteiz</span><br />
+            <span class="text-3xl sm:text-4xl font-bold text-gray-200">Reparación Express</span>
+          </h1>
+
+          <p class="text-lg text-gray-300 mb-8 max-w-lg">
+            Reparamos y renovamos tejados en Vitoria y Álava.
+            <strong class="text-white">Presupuesto gratis</strong> · Garantía por escrito ·
+            <strong class="text-brand-accent">{site.yearsExperience} años de experiencia</strong>.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-3 mb-7">
+            <a href={`tel:${site.phone}`} class="btn-cta text-lg py-4 px-7 flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+              </svg>
+              Llamar: {site.phoneDisplay}
+            </a>
+            <a href="#contacto" class="btn-outline-white text-lg py-4 px-7">
+              Presupuesto Gratis
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-300">
+            <span class="flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Respuesta en 24h
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              Garantía por escrito
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+              18 años de experiencia
+            </span>
+          </div>
         </div>
-        <p class="mt-6 text-sm text-gray-400">
-          ✅ Respondemos en menos de 24 h &nbsp;|&nbsp; ✅ Sin compromiso &nbsp;|&nbsp; ✅ Diagnóstico fotográfico gratuito
-        </p>
+
+        <!-- Columna derecha: 3 tarjetas de servicio rápido -->
+        <div class="flex flex-col gap-3">
+          {[
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" />`,
+              color: 'bg-brand-secondary',
+              title: 'Reparación de Tejados',
+              sub: 'Goteras · Tejas rotas · Filtraciones',
+              href: '/servicio/reparacion-de-tejados/',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />`,
+              color: 'bg-blue-600',
+              title: 'Impermeabilización',
+              sub: 'Cubiertas planas · Azoteas · EPDM',
+              href: '/servicio/impermeabilizacion-de-cubiertas/',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+              color: 'bg-purple-600',
+              title: 'Urgencias 24 Horas',
+              sub: 'Noches · Festivos · Fines de semana',
+              href: '#contacto',
+            },
+          ].map((card) => (
+            <a
+              href={card.href}
+              class="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-4 transition-all duration-200"
+            >
+              <div class={`w-11 h-11 ${card.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={card.icon} />
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-bold text-white text-base leading-tight">{card.title}</p>
+                <p class="text-gray-300 text-sm mt-0.5">{card.sub}</p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+        </div>
+
       </div>
     </div>
   </section>
@@ -62,7 +146,7 @@ import { site } from '../config/site.config';
   </section>
 
   <!-- ======================== SERVICIOS ======================== -->
-  <section class="section-padding bg-gray-50">
+  <section id="servicios" class="section-padding bg-gray-50">
     <div class="section-container">
       <div class="text-center mb-10">
         <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
@@ -139,7 +223,7 @@ import { site } from '../config/site.config';
   </section>
 
   <!-- ======================== PRECIOS ======================== -->
-  <section class="section-padding bg-white">
+  <section id="precios" class="section-padding bg-white">
     <div class="section-container">
       <div class="text-center mb-8">
         <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
