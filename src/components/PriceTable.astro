@@ -1,0 +1,26 @@
+---
+import { site } from '../config/site.config';
+---
+
+<div class="overflow-x-auto rounded-xl border border-gray-200">
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="bg-brand-primary text-white">
+        <th class="text-left px-6 py-4 font-semibold">Servicio</th>
+        <th class="text-right px-6 py-4 font-semibold">Precio orientativo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {site.pricing.map((row, i) => (
+        <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+          <td class="px-6 py-3.5 text-gray-700">{row.service}</td>
+          <td class="px-6 py-3.5 text-right font-semibold text-brand-primary">{row.price}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <p class="text-xs text-gray-500 px-6 py-3 bg-gray-50 border-t border-gray-200">
+    * Precios orientativos sin IVA. El precio final depende de la superficie, dificultad de acceso y materiales elegidos.
+    Solicita presupuesto gratuito sin compromiso.
+  </p>
+</div>

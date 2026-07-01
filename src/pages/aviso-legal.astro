@@ -1,0 +1,105 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { site } from '../config/site.config';
+
+const title = `Aviso Legal | ${site.name}`;
+const description = `Aviso Legal de ${site.name}. Información legal conforme a la Ley 34/2002 de Servicios de la Sociedad de la Información y Comercio Electrónico.`;
+const updated = '1 de julio de 2026';
+---
+
+<PageLayout title={title} description={description}>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Aviso Legal', href: '/aviso-legal/' }]} />
+    </div>
+  </div>
+
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto">
+
+        <h1 class="text-3xl font-bold text-brand-primary mb-2">Aviso Legal</h1>
+        <p class="text-sm text-gray-400 mb-10">Última actualización: {updated}</p>
+
+        <!-- 1 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">1. Datos identificativos del titular del sitio web</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se pone a disposición del usuario la siguiente información:
+          </p>
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-5 text-sm text-gray-700 space-y-1.5">
+            <p><span class="font-semibold w-44 inline-block">Denominación social:</span> {site.legal.companyName}</p>
+            <p><span class="font-semibold w-44 inline-block">CIF:</span> {site.legal.cif}</p>
+            <p><span class="font-semibold w-44 inline-block">Domicilio social:</span> {site.address.street}, {site.address.postalCode} {site.address.city} ({site.address.province})</p>
+            <p><span class="font-semibold w-44 inline-block">Teléfono:</span> <a href={`tel:${site.phone}`} class="text-brand-secondary">{site.phoneDisplay}</a></p>
+            <p><span class="font-semibold w-44 inline-block">Correo electrónico:</span> <a href={`mailto:${site.email}`} class="text-brand-secondary">{site.email}</a></p>
+            <p><span class="font-semibold w-44 inline-block">Sitio web:</span> {site.url}</p>
+            <p><span class="font-semibold w-44 inline-block">Registro Mercantil:</span> {site.legal.registroMercantil}</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">2. Objeto y ámbito de aplicación</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            El presente Aviso Legal regula el acceso y uso del sitio web <strong>{site.url}</strong> (en adelante, «el Sitio»), titularidad de {site.legal.companyName}. El acceso al Sitio atribuye al visitante la condición de usuario e implica la aceptación plena y sin reservas de todas las disposiciones incluidas en este Aviso Legal, en la Política de Privacidad y en la Política de Cookies, en la versión publicada en el momento en que el usuario acceda al Sitio.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            {site.legal.companyName} se reserva el derecho a modificar, en cualquier momento y sin previo aviso, la presentación, configuración y contenidos del Sitio, así como las condiciones de acceso y uso. El usuario es responsable de consultar periódicamente las condiciones vigentes.
+          </p>
+        </div>
+
+        <!-- 3 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">3. Propiedad intelectual e industrial</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Todos los contenidos del Sitio —incluyendo, sin limitación, textos, fotografías, gráficos, imágenes, iconos, tecnología, software, código fuente, diseño gráfico, logotipos y denominaciones comerciales— son propiedad de {site.legal.companyName} o de terceros que han autorizado su uso, y están protegidos por las leyes españolas e internacionales en materia de propiedad intelectual e industrial.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            El usuario puede consultar y descargar los contenidos del Sitio para su uso personal, privado y no comercial. Queda expresamente prohibida la reproducción total o parcial, distribución, transformación, comunicación pública y cualquier otra forma de explotación de los contenidos del Sitio sin la autorización expresa y por escrito de {site.legal.companyName}.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Las imágenes de ejemplo utilizadas en este Sitio durante la fase de desarrollo pueden corresponder a fotografías de stock sujetas a licencias de terceros. El titular del Sitio sustituirá dichas imágenes por fotografías propias o debidamente licenciadas con anterioridad a la comercialización definitiva del servicio.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">4. Exclusión de garantías y limitación de responsabilidad</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            {site.legal.companyName} no garantiza la disponibilidad, continuidad ni infalibilidad del funcionamiento del Sitio, y no se responsabiliza de los daños y perjuicios causados por su indisponibilidad cuando esta se deba a causas ajenas a su control, incluidas interrupciones en la conectividad de internet o fallos en los servidores de terceros.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            La información publicada en el Sitio tiene carácter meramente informativo. Los precios y condiciones orientativos indicados no constituyen oferta contractual vinculante y están sujetos a confirmación previa visita y presupuesto personalizado. {site.legal.companyName} no asume responsabilidad alguna derivada de la utilización de dicha información por parte del usuario.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            {site.legal.companyName} declara haber adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad e integridad de los datos personales, impedir su alteración, pérdida o acceso no autorizado, conforme a lo establecido en la normativa vigente en materia de protección de datos.
+          </p>
+        </div>
+
+        <!-- 5 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">5. Política de enlaces</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            El Sitio puede contener enlaces a sitios web de terceros. {site.legal.companyName} no controla ni es responsable del contenido, políticas de privacidad o prácticas de dichos sitios, y no garantiza que dichos sitios web estén libres de virus u otros elementos perjudiciales. La inclusión de un enlace no implica la aprobación por parte de {site.legal.companyName} del sitio web enlazado.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Cualquier persona física o jurídica que desee establecer un hiperenlace hacia el Sitio deberá obtener la autorización previa y por escrito de {site.legal.companyName}. En todo caso, los enlaces solo podrán dirigirse a la página de inicio del Sitio, y no podrán crear marcos (<em>frames</em>) ni reproducir parcialmente los contenidos del Sitio.
+          </p>
+        </div>
+
+        <!-- 6 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">6. Legislación aplicable y jurisdicción</h2>
+          <p class="text-gray-600 leading-relaxed">
+            El presente Aviso Legal se rige en todos y cada uno de sus extremos por la legislación española, con especial aplicación de la Ley 34/2002 (LSSI-CE), el Real Decreto Legislativo 1/1996 (Ley de Propiedad Intelectual), la Ley Orgánica 3/2018 (LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Para cualquier controversia derivada del acceso o uso del Sitio, las partes se someten expresamente a los Juzgados y Tribunales de {site.address.city}, con renuncia a cualquier otro fuero que pudiera corresponderles.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

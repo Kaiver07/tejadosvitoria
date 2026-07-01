@@ -1,0 +1,67 @@
+---
+import { site } from '../config/site.config';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-primary text-white">
+  <div class="section-container py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- NAP -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">{site.name}</h3>
+        <address class="not-italic text-gray-300 space-y-2 text-sm">
+          <p>{site.address.street}</p>
+          <p>{site.address.postalCode} {site.address.city}</p>
+          <p>{site.address.province}, {site.address.region}</p>
+          <p class="pt-2">
+            <a href={`tel:${site.phone}`} class="text-brand-accent hover:text-white font-semibold transition-colors">
+              ☎ {site.phoneDisplay}
+            </a>
+          </p>
+          <p>
+            <a href={`mailto:${site.email}`} class="hover:text-white transition-colors">
+              {site.email}
+            </a>
+          </p>
+          <p class="pt-1">{site.hours}</p>
+        </address>
+      </div>
+
+      <!-- Servicios -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Servicios</h3>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          {site.services.map((s) => (
+            <li>
+              <a href={`/servicio/${s.slug}/`} class="hover:text-white transition-colors">
+                {s.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Empresa + Legal -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Empresa</h3>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li><a href="/zonas-donde-trabajamos/" class="hover:text-white transition-colors">Zonas de Trabajo</a></li>
+          <li><a href="/contacto/" class="hover:text-white transition-colors">Contacto</a></li>
+        </ul>
+        <h3 class="font-bold text-lg mt-6 mb-4">Legal</h3>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li><a href="/aviso-legal/" class="hover:text-white transition-colors">Aviso Legal</a></li>
+          <li><a href="/politica-de-privacidad/" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+          <li><a href="/politica-de-cookies/" class="hover:text-white transition-colors">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/20 mt-10 pt-6 text-sm text-gray-400 flex flex-col sm:flex-row justify-between gap-2">
+      <p>© {year} {site.legal.companyName} · {site.legal.cif}</p>
+      <p>{site.address.city} · {site.address.province} · España</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,247 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+import PriceTable from '../components/PriceTable.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ZonesList from '../components/ZonesList.astro';
+import { site } from '../config/site.config';
+---
+
+<PageLayout
+  title={site.defaultTitle}
+  description={site.defaultDescription}
+>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="bg-brand-primary text-white">
+    <div class="section-container py-16 lg:py-24">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          Reparación e Instalación de Tejados en Vitoria-Gasteiz
+        </h1>
+        <p class="text-lg text-gray-300 mb-8">
+          {site.yearsExperience} años de experiencia en tejados y cubiertas en Álava.
+          Presupuesto gratuito · Garantía por escrito · Urgencias 24h
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={`tel:${site.phone}`} class="btn-cta text-lg py-4 px-8">
+            ☎ Llamar: {site.phoneDisplay}
+          </a>
+          <a href="#contacto" class="btn-outline-white text-lg py-4 px-8">
+            Presupuesto Gratis
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-gray-400">
+          ✅ Respondemos en menos de 24 h &nbsp;|&nbsp; ✅ Sin compromiso &nbsp;|&nbsp; ✅ Diagnóstico fotográfico gratuito
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== INTRO ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-6">
+          Especialistas en Tejados y Cubiertas en Vitoria-Gasteiz
+        </h2>
+        <div class="text-gray-600 leading-relaxed space-y-4 text-left">
+          <p>
+            En <strong>Tejados Vitoria Express</strong> llevamos más de {site.yearsExperience} años reparando, instalando y manteniendo tejados en Vitoria-Gasteiz y toda la comarca de Álava. Sabemos que un tejado dañado no espera: las lluvias del otoño vasco, las heladas de enero y los vientos del sur pueden convertir una pequeña gotera en un problema estructural si no se actúa a tiempo.
+          </p>
+          <p>
+            Ofrecemos presupuesto gratuito y sin compromiso, con diagnóstico fotográfico sobre el terreno. Nuestros técnicos trabajan con materiales homologados para el clima atlántico-continental de Vitoria —teja cerámica antihielo, impermeabilizantes de larga duración, canalones de aluminio— y aplicamos <strong>garantía por escrito</strong> en toda reparación o instalación.
+          </p>
+          <p>
+            Atendemos desde pequeñas reparaciones puntuales hasta proyectos completos de tejado nuevo, impermeabilización de cubiertas planas, aislamiento térmico y rehabilitación de fachadas. Trabajamos en viviendas particulares, comunidades de propietarios, locales comerciales y naves industriales en Vitoria y los 18 municipios de Álava en los que prestamos servicio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SERVICIOS ======================== -->
+  <section class="section-padding bg-gray-50">
+    <div class="section-container">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Nuestros Servicios de Tejados en Vitoria-Gasteiz
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Soluciones completas para cualquier tipo de cubierta, desde una reparación urgente hasta la instalación de un tejado nuevo.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {site.services.map((s) => (
+          <ServiceCard name={s.name} shortDesc={s.shortDesc} slug={s.slug} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FORMULARIO ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-2xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== POR QUÉ ELEGIRNOS ======================== -->
+  <section class="section-padding bg-gray-50">
+    <div class="section-container">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          ¿Por Qué Elegir Tejados Vitoria Express?
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: '🏆', title: `${site.yearsExperience} Años de Experiencia`, desc: 'Llevamos casi dos décadas trabajando en tejados en Vitoria-Gasteiz y la comarca de Álava. Conocemos el clima, los materiales y los problemas típicos de la zona.' },
+          { icon: '⚡', title: 'Respuesta en 24 Horas', desc: 'Atendemos urgencias cualquier día de la semana, incluyendo fines de semana y festivos. Si llueve esta noche, mañana estamos allí.' },
+          { icon: '📋', title: 'Presupuesto Gratuito', desc: 'Sin compromiso, con diagnóstico fotográfico y desglose detallado antes de empezar. Sabes exactamente qué se va a hacer y cuánto va a costar.' },
+          { icon: '✅', title: 'Garantía por Escrito', desc: 'Todos nuestros trabajos incluyen garantía de mano de obra de 2 años y la garantía del fabricante en materiales, que puede alcanzar los 15 años.' },
+          { icon: '🔧', title: 'Materiales de Primera', desc: 'Solo trabajamos con proveedores certificados y materiales homologados para el clima de Álava. Sin soluciones temporales ni materiales de baja calidad.' },
+          { icon: '🏘️', title: 'Servicio en Toda Álava', desc: `Cubrimos Vitoria-Gasteiz y ${site.zones.length} municipios de la comarca. El desplazamiento va incluido en el presupuesto sin coste adicional.` },
+        ].map((item) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6">
+            <div class="text-3xl mb-3" aria-hidden="true">{item.icon}</div>
+            <h3 class="font-bold text-brand-primary mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== URGENCIAS 24H ======================== -->
+  <section class="bg-brand-secondary">
+    <div class="section-container py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-white text-center md:text-left">
+        <div>
+          <h2 class="text-2xl lg:text-3xl font-bold mb-2">
+            ¿Gotera Urgente? Tejado Dañado por la Tormenta?
+          </h2>
+          <p class="text-white/90 text-lg">
+            Servicio de emergencias 7 días a la semana. Atendemos en el menor tiempo posible.
+          </p>
+        </div>
+        <a
+          href={`tel:${site.phone}`}
+          class="flex-shrink-0 bg-white text-brand-secondary font-bold text-xl px-8 py-5 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          ☎ {site.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PRECIOS ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Precios Orientativos de Reparación de Tejados en Vitoria
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Precios sin IVA para orientarte antes de pedir presupuesto. El precio final siempre se confirma tras la visita gratuita al inmueble.
+        </p>
+      </div>
+      <div class="max-w-2xl mx-auto">
+        <PriceTable />
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ZONAS ======================== -->
+  <section class="section-padding bg-gray-50">
+    <div class="section-container">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Zonas de Trabajo en Álava
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Prestamos servicio de reparación e instalación de tejados en Vitoria-Gasteiz y los siguientes municipios de la comarca:
+        </p>
+      </div>
+      <ZonesList />
+      <p class="text-center mt-6">
+        <a href="/zonas-donde-trabajamos/" class="text-brand-secondary font-semibold hover:underline">
+          Ver descripción completa de cada zona →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================== GALERÍA ======================== -->
+  <section class="section-padding bg-gray-50">
+    <div class="section-container">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Algunos de Nuestros Trabajos
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Tejados reparados, instalados e impermeabilizados en Vitoria-Gasteiz y la comarca de Álava.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
+        {[
+          { src: '/images/reparacion-tejados-vitoria.jpg', alt: 'Reparación de tejado en Vitoria-Gasteiz' },
+          { src: '/images/instalacion-tejados-nuevos-vitoria.jpg', alt: 'Instalación de tejado nuevo en Álava' },
+          { src: '/images/impermeabilizacion-cubiertas-vitoria.jpg', alt: 'Impermeabilización de cubierta plana en Vitoria' },
+          { src: '/images/retejado-vitoria.jpg', alt: 'Retejado completo con teja cerámica en Vitoria-Gasteiz' },
+          { src: '/images/rehabilitacion-fachadas-vitoria.jpg', alt: 'Rehabilitación de fachada en Vitoria' },
+          { src: '/images/cubiertas-industriales-vitoria.jpg', alt: 'Cubierta industrial en nave de Álava' },
+        ].map((img) => (
+          <div class="overflow-hidden rounded-xl aspect-video bg-gray-200">
+            <img
+              src={img.src}
+              alt={img.alt}
+              width="600"
+              height="400"
+              loading="lazy"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TESTIMONIOS ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-3">
+          Lo Que Dicen Nuestros Clientes
+        </h2>
+        <p class="text-gray-600">Opiniones reales de clientes en Vitoria-Gasteiz y la comarca de Álava.</p>
+      </div>
+      <Testimonials />
+    </div>
+  </section>
+
+  <!-- ======================== CTA FINAL ======================== -->
+  <section class="section-padding bg-brand-primary text-white">
+    <div class="section-container text-center">
+      <h2 class="text-2xl lg:text-3xl font-bold mb-4">
+        ¿Necesitas Reparar o Instalar un Tejado en Vitoria-Gasteiz?
+      </h2>
+      <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
+        Llámanos o escríbenos ahora. Presupuesto gratuito, sin compromiso y en menos de 24 horas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`tel:${site.phone}`} class="btn-cta text-xl py-5 px-10">
+          ☎ {site.phoneDisplay}
+        </a>
+        <a href="#contacto" class="btn-outline-white text-xl py-5 px-10">
+          Escribir mensaje
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-gray-400">{site.hours}</p>
+    </div>
+  </section>
+
+</PageLayout>

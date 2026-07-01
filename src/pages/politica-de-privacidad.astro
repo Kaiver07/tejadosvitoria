@@ -1,0 +1,181 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { site } from '../config/site.config';
+
+const title = `Política de Privacidad | ${site.name}`;
+const description = `Política de Privacidad de ${site.name}. Información sobre el tratamiento de datos personales conforme al RGPD (UE) 2016/679 y la LOPDGDD.`;
+const updated = '1 de julio de 2026';
+---
+
+<PageLayout title={title} description={description}>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Política de Privacidad', href: '/politica-de-privacidad/' }]} />
+    </div>
+  </div>
+
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto">
+
+        <h1 class="text-3xl font-bold text-brand-primary mb-2">Política de Privacidad</h1>
+        <p class="text-sm text-gray-400 mb-4">Última actualización: {updated}</p>
+        <p class="text-gray-600 leading-relaxed mb-10">
+          {site.legal.companyName} (en adelante, «nosotros» o «el Responsable») trata los datos personales que nos facilitas con pleno respeto a lo establecido en el Reglamento (UE) 2016/679, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD), y en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). La presente Política te informa de qué datos recogemos, para qué los utilizamos, cuánto tiempo los conservamos y cuáles son tus derechos.
+        </p>
+
+        <!-- 1 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">1. Responsable del tratamiento</h2>
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-5 text-sm text-gray-700 space-y-1.5">
+            <p><span class="font-semibold w-44 inline-block">Entidad:</span> {site.legal.companyName}</p>
+            <p><span class="font-semibold w-44 inline-block">CIF:</span> {site.legal.cif}</p>
+            <p><span class="font-semibold w-44 inline-block">Domicilio:</span> {site.address.street}, {site.address.postalCode} {site.address.city}</p>
+            <p><span class="font-semibold w-44 inline-block">Email de contacto:</span> <a href={`mailto:${site.email}`} class="text-brand-secondary">{site.email}</a></p>
+            <p><span class="font-semibold w-44 inline-block">Teléfono:</span> <a href={`tel:${site.phone}`} class="text-brand-secondary">{site.phoneDisplay}</a></p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">2. Datos personales que tratamos y cómo los obtenemos</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Recabamos únicamente los datos que tú nos facilitas voluntariamente a través de los formularios de contacto del Sitio:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-1.5 mb-3 pl-2">
+            <li><strong>Nombre:</strong> para identificarte y dirigirnos a ti personalmente.</li>
+            <li><strong>Teléfono:</strong> para contactar contigo y facilitar el presupuesto solicitado.</li>
+            <li><strong>Correo electrónico</strong> (opcional): para enviarte el presupuesto por escrito si lo solicitas.</li>
+            <li><strong>Mensaje:</strong> descripción del trabajo o problema que nos trasladas.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed">
+            No recabamos datos especialmente protegidos (datos de salud, ideología, religión, origen étnico, etc.) ni datos de menores de 14 años. Si eres menor de 14 años, no utilices el formulario de contacto sin el consentimiento de tus padres o tutores legales.
+          </p>
+        </div>
+
+        <!-- 3 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">3. Finalidades del tratamiento y base jurídica</h2>
+          <div class="overflow-x-auto rounded-xl border border-gray-200">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-brand-primary text-white">
+                  <th class="text-left px-4 py-3 font-semibold">Finalidad</th>
+                  <th class="text-left px-4 py-3 font-semibold">Base jurídica (RGPD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Atender y responder solicitudes de presupuesto o información enviadas a través del formulario de contacto.', 'Art. 6.1.b — Ejecución de medidas precontractuales a petición del interesado.'],
+                  ['Gestión de la relación comercial derivada de los servicios de tejados contratados.', 'Art. 6.1.b — Ejecución del contrato de prestación de servicios.'],
+                  ['Cumplimiento de obligaciones legales (fiscales, contables, de seguridad social) cuando proceda.', 'Art. 6.1.c — Cumplimiento de una obligación legal.'],
+                  ['Defensa de reclamaciones ante órganos judiciales o administrativos, si fuera necesario.', 'Art. 6.1.f — Interés legítimo del Responsable.'],
+                ].map(([fin, base], i) => (
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td class="px-4 py-3 text-gray-700 align-top">{fin}</td>
+                    <td class="px-4 py-3 text-gray-600 align-top text-xs">{base}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">
+            No realizamos tratamientos basados en tu consentimiento. Si en el futuro desearas recibir comunicaciones comerciales o newsletters, te solicitaríamos un consentimiento específico, separado e informado.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">4. Plazo de conservación de los datos</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Conservamos tus datos durante el tiempo estrictamente necesario para la finalidad para la que fueron recabados:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 pl-2">
+            <li><strong>Solicitudes de presupuesto sin relación contractual posterior:</strong> hasta 1 año desde la última comunicación, salvo que solicites su supresión antes.</li>
+            <li><strong>Datos de clientes con contrato formalizado:</strong> durante la vigencia de la relación comercial y, una vez finalizada, durante los plazos legales de prescripción de acciones (hasta 6 años para obligaciones mercantiles y hasta 5 años para contratos civiles, conforme al Código Civil y Código de Comercio).</li>
+            <li><strong>Documentación fiscal y contable:</strong> 4 años (Ley General Tributaria) desde la presentación de la autoliquidación correspondiente.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            Transcurridos dichos plazos, los datos serán suprimidos de forma segura o anonimizados de modo que no permitan la identificación del interesado.
+          </p>
+        </div>
+
+        <!-- 5 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">5. Destinatarios y encargados del tratamiento</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            No cedemos ni vendemos tus datos personales a terceros, salvo obligación legal o que sea necesario para la ejecución del servicio contratado. Con carácter general, solo acceden a tus datos los empleados y colaboradores de {site.legal.companyName} que necesitan conocerlos para prestar el servicio.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Como <strong>encargado del tratamiento</strong>, utilizamos el servicio de formularios de <strong>Web3Forms</strong> (web3forms.com), que actúa en nombre del Responsable para transmitir los mensajes enviados a través del formulario de contacto. Web3Forms está sujeto a un contrato de encargo del tratamiento conforme al artículo 28 RGPD y se compromete a no utilizar los datos para fines propios.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            En el supuesto de que sea necesario contratar a profesionales externos (aparejadores, arquitectos, empresas de retirada de amianto, etc.) para la ejecución de un encargo, únicamente se les facilitarán los datos imprescindibles para la coordinación de los trabajos, siempre bajo acuerdo de confidencialidad.
+          </p>
+        </div>
+
+        <!-- 6 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">6. Transferencias internacionales de datos</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Los servidores de Web3Forms están alojados en infraestructura con sede en la Unión Europea o en países con nivel de protección equivalente. En cualquier caso, Web3Forms ha adoptado las garantías adecuadas conforme al artículo 46 RGPD para cualquier transferencia fuera del Espacio Económico Europeo. No realizamos ninguna otra transferencia internacional de datos personales.
+          </p>
+        </div>
+
+        <!-- 7 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">7. Tus derechos</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            En aplicación del RGPD y la LOPDGDD, puedes ejercer en cualquier momento los siguientes derechos:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              ['Acceso', 'Saber qué datos personales tuyos tratamos.'],
+              ['Rectificación', 'Corregir datos inexactos o incompletos.'],
+              ['Supresión', 'Solicitar el borrado de tus datos cuando ya no sean necesarios.'],
+              ['Oposición', 'Oponerte al tratamiento basado en interés legítimo.'],
+              ['Limitación', 'Solicitar que suspendamos el tratamiento mientras resolvemos una incidencia.'],
+              ['Portabilidad', 'Recibir tus datos en formato estructurado y legible por máquina.'],
+            ].map(([r, d]) => (
+              <div class="bg-gray-50 rounded-lg border border-gray-200 p-4">
+                <p class="font-semibold text-brand-primary text-sm mb-1">{r}</p>
+                <p class="text-gray-600 text-sm">{d}</p>
+              </div>
+            ))}
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Para ejercer cualquiera de estos derechos, envíanos un escrito a <a href={`mailto:${site.email}`} class="text-brand-secondary font-medium">{site.email}</a> indicando el derecho que deseas ejercer, adjuntando copia de tu DNI o documento identificativo equivalente. Responderemos en el plazo máximo de un mes, prorrogable a tres meses en casos complejos.
+          </p>
+        </div>
+
+        <!-- 8 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">8. Derecho a presentar una reclamación ante la AEPD</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Si consideras que el tratamiento de tus datos personales no se ajusta a la normativa vigente, o que no hemos atendido correctamente tu solicitud de derechos, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>, autoridad de control competente en España, a través de su sede electrónica en <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" class="text-brand-secondary">www.aepd.es</a>.
+          </p>
+        </div>
+
+        <!-- 9 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">9. Seguridad de los datos</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Hemos implementado medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo, incluyendo el cifrado de las comunicaciones (protocolo HTTPS/TLS), el control de acceso a los sistemas y la formación del personal en materia de protección de datos. No obstante, ningún sistema de seguridad puede garantizar de forma absoluta la invulnerabilidad de los datos. En caso de producirse una brecha de seguridad que afecte a tus datos, cumpliremos con las obligaciones de notificación establecidas en el artículo 33 y 34 del RGPD.
+          </p>
+        </div>
+
+        <!-- 10 -->
+        <div class="mb-4">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">10. Modificaciones de la Política de Privacidad</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Podemos actualizar esta Política de Privacidad para adaptarla a cambios legislativos, jurisprudenciales o de nuestras actividades. Cuando realicemos cambios sustanciales, lo comunicaremos de forma visible en el Sitio. La fecha de «última actualización» que figura al inicio de este documento refleja la versión vigente. Te recomendamos revisar esta Política periódicamente.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

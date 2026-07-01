@@ -1,0 +1,132 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { site } from '../config/site.config';
+
+const title = `Política de Cookies | ${site.name}`;
+const description = `Política de Cookies de ${site.name}. Información detallada sobre las cookies utilizadas en el sitio web conforme a la LSSI-CE y el RGPD.`;
+const updated = '1 de julio de 2026';
+---
+
+<PageLayout title={title} description={description}>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Política de Cookies', href: '/politica-de-cookies/' }]} />
+    </div>
+  </div>
+
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto">
+
+        <h1 class="text-3xl font-bold text-brand-primary mb-2">Política de Cookies</h1>
+        <p class="text-sm text-gray-400 mb-4">Última actualización: {updated}</p>
+        <p class="text-gray-600 leading-relaxed mb-10">
+          Esta Política de Cookies explica qué son las cookies, qué tipos utiliza el sitio web <strong>{site.url}</strong> y cómo puedes gestionarlas o desactivarlas. Su uso se rige por lo establecido en el artículo 22.2 de la Ley 34/2002 (LSSI-CE) y en el Reglamento (UE) 2016/679 (RGPD).
+        </p>
+
+        <!-- 1 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">1. ¿Qué son las cookies?</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Las cookies son pequeños archivos de texto que los sitios web depositan en el dispositivo del usuario (ordenador, tablet o móvil) cuando este los visita. Permiten que el sitio recuerde información sobre la visita, como el idioma preferido y otras opciones, con el fin de facilitar la próxima visita y hacer el sitio más útil. Su uso no implica ningún riesgo para el dispositivo del usuario.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">2. Tipos de cookies según su finalidad</h2>
+          <div class="space-y-3">
+            {[
+              ['Cookies técnicas o estrictamente necesarias', 'Son imprescindibles para el correcto funcionamiento del sitio. No requieren consentimiento previo. Sin ellas, algunas funcionalidades básicas como la navegación o el envío de formularios no funcionarían correctamente.'],
+              ['Cookies analíticas', 'Permiten cuantificar el número de usuarios y analizar el comportamiento de los visitantes del sitio (páginas visitadas, tiempo de permanencia, fuente de tráfico). Este sitio web no utiliza actualmente cookies analíticas de terceros (Google Analytics, Hotjar, etc.).'],
+              ['Cookies de publicidad o rastreo', 'Se utilizan para mostrar publicidad relevante y medir su eficacia. Este sitio web no utiliza cookies de publicidad comportamental.'],
+              ['Cookies de terceros', 'Instaladas por dominios externos integrados en el Sitio (mapas, vídeos embebidos, botones sociales). Su uso y condiciones dependen de la política de privacidad del proveedor correspondiente.'],
+            ].map(([nombre, desc]) => (
+              <div class="border border-gray-200 rounded-xl p-4">
+                <h3 class="font-semibold text-gray-800 mb-1">{nombre}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">3. Cookies utilizadas en este sitio web</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Este sitio es un sitio web estático (generado en servidor sin código de lado cliente que instale cookies propias de sesión o seguimiento). La siguiente tabla detalla las únicas cookies o tecnologías de seguimiento que pueden instalarse como consecuencia de los servicios de terceros integrados:
+          </p>
+          <div class="overflow-x-auto rounded-xl border border-gray-200">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-brand-primary text-white">
+                  <th class="text-left px-4 py-3 font-semibold">Proveedor</th>
+                  <th class="text-left px-4 py-3 font-semibold">Servicio</th>
+                  <th class="text-left px-4 py-3 font-semibold">Tipo</th>
+                  <th class="text-left px-4 py-3 font-semibold">Finalidad</th>
+                  <th class="text-left px-4 py-3 font-semibold">Caducidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['OpenStreetMap', 'Mapa embebido en /contacto', 'Técnica de tercero', 'Mostrar mapa de localización. OSM puede instalar cookies de sesión para el correcto funcionamiento del iframe.', 'Sesión'],
+                  ['Web3Forms', 'Formulario de contacto', 'Técnica de tercero', 'Procesamiento del formulario. Pueden instalarse cookies técnicas para la verificación antispam (honeypot).', 'Sesión'],
+                  ['Vercel', 'Infraestructura del sitio', 'Técnica', 'Cookies de balanceo de carga y enrutamiento de red del proveedor de alojamiento.', 'Sesión / Corta duración'],
+                ].map(([prov, serv, tipo, fin, cad], i) => (
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td class="px-4 py-3 font-medium text-gray-800 align-top">{prov}</td>
+                    <td class="px-4 py-3 text-gray-600 align-top">{serv}</td>
+                    <td class="px-4 py-3 text-gray-600 align-top">{tipo}</td>
+                    <td class="px-4 py-3 text-gray-600 align-top text-xs">{fin}</td>
+                    <td class="px-4 py-3 text-gray-600 align-top whitespace-nowrap">{cad}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">
+            Las cookies técnicas estrictamente necesarias no requieren consentimiento previo del usuario conforme al artículo 22.2 LSSI-CE y a las directrices de la AEPD. No se instalan cookies de análisis, publicidad ni rastreo de comportamiento.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">4. Cómo gestionar o desactivar las cookies</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Puedes permitir, bloquear o eliminar las cookies instaladas en tu dispositivo a través de la configuración de tu navegador. Ten en cuenta que, al desactivar cookies técnicas necesarias, algunas funcionalidades del Sitio (como el formulario de contacto o el mapa) pueden dejar de funcionar correctamente.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              ['Google Chrome', 'Menú → Configuración → Privacidad y seguridad → Cookies y otros datos de sitios'],
+              ['Mozilla Firefox', 'Menú → Configuración → Privacidad y seguridad → Cookies y datos del sitio'],
+              ['Apple Safari', 'Preferencias → Privacidad → Gestionar datos de sitios web'],
+              ['Microsoft Edge', 'Menú → Configuración → Cookies y permisos del sitio'],
+              ['Opera', 'Menú → Configuración → Privacidad y seguridad → Cookies'],
+              ['Safari iOS', 'Ajustes → Safari → Privacidad y seguridad → Bloquear todas las cookies'],
+            ].map(([nav, ruta]) => (
+              <div class="bg-gray-50 rounded-lg border border-gray-200 p-3">
+                <p class="font-semibold text-gray-800 text-sm mb-0.5">{nav}</p>
+                <p class="text-gray-500 text-xs">{ruta}</p>
+              </div>
+            ))}
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Para más información sobre cómo gestionar las cookies, puedes consultar la guía de la <a href="https://www.aepd.es/es/areas-de-actuacion/internet-y-redes-sociales/cookies" target="_blank" rel="noopener noreferrer" class="text-brand-secondary">Agencia Española de Protección de Datos (AEPD)</a>.
+          </p>
+        </div>
+
+        <!-- 5 -->
+        <div class="mb-4">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">5. Actualizaciones de la Política de Cookies</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Podemos actualizar esta Política de Cookies cuando integremos nuevos servicios de terceros o cuando cambie la regulación aplicable. Cualquier cambio sustancial será comunicado de forma visible en el Sitio. La fecha de «última actualización» que figura al inicio refleja la versión actualmente vigente.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

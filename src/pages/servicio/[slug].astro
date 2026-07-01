@@ -1,0 +1,190 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { site } from '../../config/site.config';
+
+export async function getStaticPaths() {
+  return site.services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+// Servicios relacionados resueltos
+const related = service.relatedServices
+  .map((slug) => site.services.find((s) => s.slug === slug))
+  .filter(Boolean);
+
+// Schema Service + FAQPage
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: service.h1,
+  serviceType: service.name,
+  description: service.metaDescription,
+  provider: {
+    '@type': site.schemaType,
+    '@id': `${site.url}/#business`,
+    name: site.name,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: site.address.city,
+  },
+  url: `${site.url}/servicio/${service.slug}/`,
+};
+
+const faqSchema = service.content.faqs.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: service.content.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a,
+        },
+      })),
+    }
+  : null;
+
+const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
+---
+
+<PageLayout
+  title={service.title}
+  description={service.metaDescription}
+  schema={schemas}
+>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Servicios', href: '/#servicios' }, { name: service.name, href: `/servicio/${service.slug}/` }]} />
+    </div>
+  </div>
+
+  <!-- Hero de página -->
+  <section class="bg-brand-primary text-white">
+    <div class="section-container py-12 lg:py-16">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl font-bold leading-tight mb-4">{service.h1}</h1>
+        <p class="text-lg text-gray-300 mb-6">{service.shortDesc}</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href={`tel:${site.phone}`} class="btn-cta py-3 px-6">
+            ☎ {site.phoneDisplay}
+          </a>
+          <a href="#contacto-servicio" class="btn-outline-white py-3 px-6">
+            Presupuesto Gratis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imagen + Contenido -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        <!-- Contenido principal -->
+        <div class="lg:col-span-2 service-prose">
+
+          <!-- Imagen del servicio -->
+          <img
+            src={service.image.src}
+            alt={service.image.alt}
+            width={service.image.width}
+            height={service.image.height}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full rounded-xl mb-8 object-cover aspect-video bg-gray-200"
+          />
+
+          <!-- Intro paragraphs -->
+          {service.content.intro.map((p) => (
+            <p>{p}</p>
+          ))}
+
+          <!-- Qué hacemos -->
+          <h2>¿Qué incluye este servicio?</h2>
+          <ul>
+            {service.content.whatWeDo.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+
+          <!-- Cuándo llamar -->
+          <h2>¿Cuándo debes llamarnos?</h2>
+          <ul>
+            {service.content.whenToCall.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+
+          <!-- FAQs -->
+          {service.content.faqs.length > 0 && (
+            <h2>Preguntas Frecuentes sobre {service.name} en Vitoria</h2>
+          )}
+          {service.content.faqs.map((faq) => (
+            <div class="border border-gray-200 rounded-lg p-5 mb-3">
+              <h3 class="font-semibold text-gray-800 mb-2">{faq.q}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+
+          <!-- Servicios relacionados -->
+          {related.length > 0 && (
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200">
+              <h3 class="font-bold text-brand-primary mb-3">Servicios relacionados</h3>
+              <ul class="space-y-1.5">
+                {related.map((r) => r && (
+                  <li>
+                    <a href={`/servicio/${r.slug}/`} class="text-brand-secondary hover:underline font-medium text-sm">
+                      → {r.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+        </div>
+
+        <!-- Sidebar: formulario -->
+        <aside class="lg:col-span-1">
+          <div id="contacto-servicio" class="sticky top-24">
+            <ContactForm
+              title={`Presupuesto para ${service.name}`}
+              subtitle="Sin compromiso · Respondemos en 24 h"
+            />
+            <div class="mt-4 text-center">
+              <a href={`tel:${site.phone}`} class="text-brand-secondary font-bold text-lg hover:underline">
+                ☎ {site.phoneDisplay}
+              </a>
+              <p class="text-gray-500 text-xs mt-1">{site.hours}</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA inferior -->
+  <section class="bg-brand-secondary py-10">
+    <div class="section-container text-center text-white">
+      <p class="text-xl font-bold mb-4">
+        ¿Necesitas {service.name} en Vitoria-Gasteiz? Llámanos ahora.
+      </p>
+      <a href={`tel:${site.phone}`} class="bg-white text-brand-secondary font-bold text-xl px-10 py-4 rounded-xl hover:bg-gray-100 transition-colors inline-block">
+        ☎ {site.phoneDisplay}
+      </a>
+    </div>
+  </section>
+
+</PageLayout>

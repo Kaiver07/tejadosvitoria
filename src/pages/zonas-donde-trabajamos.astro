@@ -1,0 +1,67 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { site } from '../config/site.config';
+
+const title = `Zonas de Trabajo en Álava | ${site.name}`;
+const description = `Prestamos servicio de reparación e instalación de tejados en Vitoria-Gasteiz y ${site.zones.length} municipios de la comarca de Álava. Desplazamiento sin coste adicional.`;
+---
+
+<PageLayout title={title} description={description}>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Zonas de Trabajo', href: '/zonas-donde-trabajamos/' }]} />
+    </div>
+  </div>
+
+  <section class="bg-brand-primary text-white">
+    <div class="section-container py-12">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">
+        Zonas Donde Trabajamos en Álava
+      </h1>
+      <p class="text-gray-300 text-lg max-w-xl">
+        {site.name} presta servicio de tejados en Vitoria-Gasteiz y {site.zones.length} municipios de la comarca. El desplazamiento va incluido en el presupuesto.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <p class="text-gray-600 max-w-3xl mb-10 leading-relaxed">
+        Cubrimos toda la comarca de Álava, desde el centro de Vitoria-Gasteiz hasta los municipios rurales más alejados. Nos desplazamos sin cargo adicional en nuestra área habitual de trabajo. Para municipios fuera del listado, consulta disponibilidad llamándonos al{' '}
+        <a href={`tel:${site.phone}`} class="text-brand-secondary font-semibold">{site.phoneDisplay}</a>.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {site.zones.map((zone) => (
+          <article id={zone.slug} class="border border-gray-200 rounded-xl p-6 scroll-mt-24">
+            <h2 class="text-xl font-bold text-brand-primary mb-2">
+              Tejados en {zone.name}
+            </h2>
+            <p class="text-gray-600 leading-relaxed text-sm">{zone.description}</p>
+            <a
+              href={`tel:${site.phone}`}
+              class="mt-4 inline-flex items-center gap-2 text-brand-secondary font-semibold text-sm hover:underline"
+            >
+              ☎ Solicitar presupuesto en {zone.name}
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-brand-primary text-white rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold mb-3">
+          ¿Tu municipio no aparece en la lista?
+        </h2>
+        <p class="text-gray-300 mb-6">
+          Llámanos y comprobamos disponibilidad. Solemos poder atender municipios cercanos a nuestra área habitual.
+        </p>
+        <a href={`tel:${site.phone}`} class="btn-cta text-lg px-8 py-4">
+          ☎ {site.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
