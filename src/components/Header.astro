@@ -1,5 +1,6 @@
 ---
 import { site } from '../config/site.config';
+import WeatherWidget from './WeatherWidget.astro';
 
 const navLinks = [
   { label: 'Inicio',    href: '/' },
@@ -39,13 +40,9 @@ const navLinks = [
         ))}
       </nav>
 
-      <!-- Precio desde + teléfono -->
+      <!-- Tiempo en Vitoria + teléfono -->
       <div class="flex items-center gap-3 flex-shrink-0">
-        <!-- Precio orientativo (desktop) -->
-        <div class="hidden md:flex flex-col items-end leading-tight">
-          <span class="text-brand-accent font-bold text-lg">Desde 80€</span>
-          <span class="text-gray-400 text-xs uppercase tracking-wide">Tarifa orientativa</span>
-        </div>
+        <WeatherWidget />
         <!-- Botón teléfono -->
         <a
           href={`tel:${site.phone}`}

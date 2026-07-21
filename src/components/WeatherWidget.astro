@@ -1,0 +1,57 @@
+---
+---
+
+<div id="weather-widget" class="hidden md:flex flex-col items-end leading-tight min-w-[100px]" aria-live="polite">
+  <span id="weather-temp" class="text-brand-accent font-bold text-lg">&nbsp;</span>
+  <span id="weather-label" class="text-gray-400 text-xs uppercase tracking-wide">Vitoria-Gasteiz</span>
+</div>
+
+<script>
+  const WEATHER_CODES: Record<number, string> = {
+    0: 'Despejado',
+    1: 'Poco nuboso',
+    2: 'Parcial nuboso',
+    3: 'Nublado',
+    45: 'Niebla',
+    48: 'Niebla',
+    51: 'Llovizna',
+    53: 'Llovizna',
+    55: 'Llovizna',
+    61: 'Lluvia',
+    63: 'Lluvia',
+    65: 'Lluvia fuerte',
+    71: 'Nieve',
+    73: 'Nieve',
+    75: 'Nieve fuerte',
+    80: 'Chubascos',
+    81: 'Chubascos',
+    82: 'Chubascos fuertes',
+    95: 'Tormenta',
+    96: 'Tormenta',
+    99: 'Tormenta',
+  };
+
+  async function loadWeather() {
+    const tempEl = document.getElementById('weather-temp');
+    const labelEl = document.getElementById('weather-label');
+    if (!tempEl || !labelEl) return;
+
+    try {
+      const res = await fetch(
+        'https://api.open-meteo.com/v1/forecast?latitude=42.8467&longitude=-2.6716&current_weather=true&timezone=Europe%2FMadrid'
+      );
+      const data = await res.json();
+      const temperature = data?.current_weather?.temperature;
+      const code = data?.current_weather?.weathercode;
+      if (typeof temperature === 'number') {
+        tempEl.textContent = `${Math.round(temperature)}°C`;
+      }
+      labelEl.textContent = WEATHER_CODES[code] ?? 'Vitoria-Gasteiz';
+    } catch {
+      labelEl.textContent = 'Vitoria-Gasteiz';
+    }
+  }
+
+  loadWeather();
+  setInterval(loadWeather, 15 * 60 * 1000);
+</script>

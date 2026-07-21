@@ -11,15 +11,15 @@
 
 /* Utility classes used across components */
 .btn-cta {
-  @apply bg-brand-secondary hover:bg-brand-secondary-dark text-white font-bold px-6 py-3 rounded-lg transition-colors duration-200 inline-block text-center;
+  @apply inline-flex items-center justify-center gap-2 bg-brand-secondary hover:bg-brand-secondary-dark text-white font-bold px-6 py-3 rounded-lg transition-colors duration-200 text-center;
 }
 
 .btn-outline-white {
-  @apply border-2 border-white text-white hover:bg-white hover:text-brand-primary font-semibold px-6 py-3 rounded-lg transition-colors duration-200 inline-block text-center;
+  @apply inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-brand-primary font-semibold px-6 py-3 rounded-lg transition-colors duration-200 text-center;
 }
 
 .btn-primary {
-  @apply bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 inline-block text-center;
+  @apply inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 text-center;
 }
 
 .section-container {
