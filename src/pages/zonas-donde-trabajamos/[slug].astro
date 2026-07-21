@@ -1,0 +1,145 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { site } from '../../config/site.config';
+
+export async function getStaticPaths() {
+  return site.zones.map((zone, index) => ({
+    params: { slug: zone.slug },
+    props: {
+      zone,
+      nearby: site.zones.filter((_, i) => i !== index).slice(0, 6),
+    },
+  }));
+}
+
+const { zone, nearby } = Astro.props;
+
+const title = `Tejados en ${zone.name} | ${site.name}`;
+const metaDescription = `Reparación, instalación y mantenimiento de tejados en ${zone.name} (Álava). Presupuesto gratis, garantía por escrito y ${site.yearsExperience} años de experiencia. ☎ ${site.phoneDisplay}`;
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Tejados en ${zone.name}`,
+  serviceType: 'Reparación e instalación de tejados',
+  description: metaDescription,
+  provider: {
+    '@type': site.schemaType,
+    '@id': `${site.url}/#business`,
+    name: site.name,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: zone.name,
+  },
+  url: `${site.url}/zonas-donde-trabajamos/${zone.slug}/`,
+};
+---
+
+<PageLayout title={title} description={metaDescription} schema={serviceSchema}>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Zonas de Trabajo', href: '/zonas-donde-trabajamos/' }, { name: zone.name, href: `/zonas-donde-trabajamos/${zone.slug}/` }]} />
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="bg-brand-primary text-white">
+    <div class="section-container py-12 lg:py-16">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl font-bold leading-tight mb-4">Tejados en {zone.name}</h1>
+        <p class="text-lg text-gray-300 mb-6">{zone.description}</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href={`tel:${site.phone}`} class="btn-cta py-3 px-6">
+            ☎ {site.phoneDisplay}
+          </a>
+          <a href="#contacto-zona" class="btn-outline-white py-3 px-6">
+            Presupuesto Gratis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido + formulario -->
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        <div class="lg:col-span-2 service-prose">
+          <p>
+            En {site.name} llevamos {site.yearsExperience} años reparando, instalando y manteniendo tejados en Vitoria-Gasteiz y toda la comarca de Álava, incluido {zone.name}. Nos desplazamos sin coste adicional dentro de nuestra área habitual de trabajo, con presupuesto gratuito y diagnóstico fotográfico antes de empezar cualquier trabajo.
+          </p>
+          <p>
+            Trabajamos con materiales homologados para el clima de la zona y aplicamos <strong>garantía por escrito</strong> en toda reparación o instalación, tanto en viviendas particulares y caseríos como en comunidades de propietarios y naves industriales.
+          </p>
+
+          <h2>Servicios que ofrecemos en {zone.name}</h2>
+          <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 mb-8">
+            {site.services.map((s) => (
+              <ServiceCard name={s.name} shortDesc={s.shortDesc} slug={s.slug} />
+            ))}
+          </div>
+
+          <h2>¿Por qué elegirnos en {zone.name}?</h2>
+          <ul>
+            <li><strong>Respuesta en 24 horas</strong>, incluidos fines de semana y festivos.</li>
+            <li><strong>Presupuesto gratuito y sin compromiso</strong>, con diagnóstico fotográfico.</li>
+            <li><strong>Garantía por escrito</strong> en mano de obra y materiales.</li>
+            <li><strong>Desplazamiento incluido</strong> dentro de nuestra área de trabajo habitual.</li>
+          </ul>
+
+          {nearby.length > 0 && (
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200 not-prose">
+              <h3 class="font-bold text-brand-primary mb-3">También trabajamos cerca de {zone.name}</h3>
+              <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {nearby.map((z) => (
+                  <li>
+                    <a href={`/zonas-donde-trabajamos/${z.slug}/`} class="text-brand-secondary hover:underline font-medium text-sm">
+                      → {z.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar: formulario -->
+        <aside class="lg:col-span-1">
+          <div id="contacto-zona" class="sticky top-24">
+            <ContactForm
+              title={`Presupuesto en ${zone.name}`}
+              subtitle="Sin compromiso · Respondemos en 24 h"
+            />
+            <div class="mt-4 text-center">
+              <a href={`tel:${site.phone}`} class="text-brand-secondary font-bold text-lg hover:underline">
+                ☎ {site.phoneDisplay}
+              </a>
+              <p class="text-gray-500 text-xs mt-1">{site.hours}</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA inferior -->
+  <section class="bg-brand-secondary py-10">
+    <div class="section-container text-center text-white">
+      <p class="text-xl font-bold mb-4">
+        ¿Necesitas un tejadista en {zone.name}? Llámanos ahora.
+      </p>
+      <a href={`tel:${site.phone}`} class="bg-white text-brand-secondary font-bold text-xl px-10 py-4 rounded-xl hover:bg-gray-100 transition-colors inline-block">
+        ☎ {site.phoneDisplay}
+      </a>
+    </div>
+  </section>
+
+</PageLayout>

@@ -35,16 +35,16 @@ const description = `Prestamos servicio de reparación e instalación de tejados
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {site.zones.map((zone) => (
-          <article id={zone.slug} class="border border-gray-200 rounded-xl p-6 scroll-mt-24">
+          <article class="border border-gray-200 rounded-xl p-6">
             <h2 class="text-xl font-bold text-brand-primary mb-2">
               Tejados en {zone.name}
             </h2>
             <p class="text-gray-600 leading-relaxed text-sm">{zone.description}</p>
             <a
-              href={`tel:${site.phone}`}
+              href={`/zonas-donde-trabajamos/${zone.slug}/`}
               class="mt-4 inline-flex items-center gap-2 text-brand-secondary font-semibold text-sm hover:underline"
             >
-              ☎ Solicitar presupuesto en {zone.name}
+              Ver zona completa y presupuesto en {zone.name} →
             </a>
           </article>
         ))}
