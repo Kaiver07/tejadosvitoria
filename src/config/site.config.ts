@@ -141,7 +141,7 @@ export const site = {
         ],
       },
       relatedServices: ['reparacion-de-goteras-y-humedades', 'retejado-sustitucion-de-tejas', 'impermeabilizacion-de-cubiertas'],
-      image: { src: '/images/reparacion-tejados-vitoria.jpg', alt: 'Reparación de tejado en Vitoria-Gasteiz por especialistas', width: 800, height: 534 },
+      image: { src: '/images/reparacion-tejados-vitoria-new.png', alt: 'Reparación de tejado en Vitoria-Gasteiz por especialistas', width: 1408, height: 768 },
     },
     {
       slug: 'instalacion-de-tejados-nuevos',
@@ -192,7 +192,7 @@ export const site = {
         ],
       },
       relatedServices: ['retejado-sustitucion-de-tejas', 'aislamiento-de-cubiertas', 'reparacion-de-tejados'],
-      image: { src: '/images/instalacion-tejados-nuevos-vitoria.jpg', alt: 'Instalación de tejado nuevo en Vitoria-Gasteiz con teja cerámica', width: 800, height: 534 },
+      image: { src: '/images/instalacion-tejados-nuevos-vitoria.png', alt: 'Instalación de tejado nuevo en Vitoria-Gasteiz con teja cerámica', width: 1408, height: 768 },
     },
     {
       slug: 'impermeabilizacion-de-cubiertas',
@@ -238,7 +238,7 @@ export const site = {
         ],
       },
       relatedServices: ['reparacion-de-goteras-y-humedades', 'aislamiento-de-cubiertas', 'reparacion-de-tejados'],
-      image: { src: '/images/impermeabilizacion-cubiertas-vitoria.jpg', alt: 'Impermeabilización de cubierta plana en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/impermeabilizacion-cubiertas-vitoria.png', alt: 'Impermeabilización de cubierta plana en Vitoria-Gasteiz', width: 1536, height: 1024 },
     },
     {
       slug: 'reparacion-de-goteras-y-humedades',
@@ -286,7 +286,7 @@ export const site = {
         ],
       },
       relatedServices: ['impermeabilizacion-de-cubiertas', 'reparacion-de-tejados', 'instalacion-de-canalones'],
-      image: { src: '/images/reparacion-goteras-vitoria.jpg', alt: 'Reparación de gotera en tejado en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/reparacion-goteras-vitoria.png', alt: 'Reparación de gotera en tejado en Vitoria-Gasteiz', width: 1536, height: 1024 },
     },
     {
       slug: 'instalacion-de-canalones',
@@ -333,7 +333,7 @@ export const site = {
         ],
       },
       relatedServices: ['reparacion-de-tejados', 'reparacion-de-goteras-y-humedades', 'limpieza-de-tejados'],
-      image: { src: '/images/instalacion-canalones-vitoria.jpg', alt: 'Instalación de canalones de aluminio en tejado en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/instalacion-canalones-vitoria.png', alt: 'Instalación de canalones de aluminio en tejado en Vitoria-Gasteiz', width: 1536, height: 1024 },
     },
     {
       slug: 'retejado-sustitucion-de-tejas',
@@ -379,7 +379,7 @@ export const site = {
         ],
       },
       relatedServices: ['instalacion-de-tejados-nuevos', 'aislamiento-de-cubiertas', 'reparacion-de-tejados'],
-      image: { src: '/images/retejado-vitoria.jpg', alt: 'Retejado completo de cubierta en Vitoria-Gasteiz con teja cerámica nueva', width: 800, height: 534 },
+      image: { src: '/images/retejado-vitoria-new.png', alt: 'Retejado completo de cubierta en Vitoria-Gasteiz con teja cerámica nueva', width: 1408, height: 768 },
     },
     {
       slug: 'instalacion-de-claraboyas-y-velux',
@@ -424,7 +424,7 @@ export const site = {
         ],
       },
       relatedServices: ['reparacion-de-tejados', 'aislamiento-de-cubiertas', 'instalacion-de-tejados-nuevos'],
-      image: { src: '/images/claraboyas-velux-vitoria.jpg', alt: 'Instalación de ventana Velux en tejado en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/claraboyas-velux-vitoria-new.png', alt: 'Instalación de ventana Velux en tejado en Vitoria-Gasteiz', width: 1408, height: 768 },
     },
     {
       slug: 'aislamiento-de-cubiertas',
@@ -470,7 +470,7 @@ export const site = {
         ],
       },
       relatedServices: ['instalacion-de-tejados-nuevos', 'retejado-sustitucion-de-tejas', 'impermeabilizacion-de-cubiertas'],
-      image: { src: '/images/aislamiento-cubiertas-vitoria.jpg', alt: 'Aislamiento térmico de cubierta en Vitoria-Gasteiz con paneles PIR', width: 800, height: 534 },
+      image: { src: '/images/aislamiento-cubiertas-vitoria-new.png', alt: 'Aislamiento térmico de cubierta en Vitoria-Gasteiz con paneles PIR', width: 1408, height: 768 },
     },
     {
       slug: 'rehabilitacion-de-fachadas',
@@ -517,7 +517,7 @@ export const site = {
         ],
       },
       relatedServices: ['impermeabilizacion-de-cubiertas', 'reparacion-de-tejados', 'aislamiento-de-cubiertas'],
-      image: { src: '/images/rehabilitacion-fachadas-vitoria.jpg', alt: 'Rehabilitación de fachada en edificio de Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/rehabilitacion-fachadas-vitoria-new.png', alt: 'Rehabilitación de fachada en edificio de Vitoria-Gasteiz', width: 1408, height: 768 },
     },
     {
       slug: 'limpieza-de-tejados',
@@ -563,7 +563,7 @@ export const site = {
         ],
       },
       relatedServices: ['reparacion-de-tejados', 'instalacion-de-canalones', 'impermeabilizacion-de-cubiertas'],
-      image: { src: '/images/limpieza-tejados-vitoria.jpg', alt: 'Limpieza de tejado con hidrolimpiadora en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/limpieza-tejados-vitoria-new.png', alt: 'Limpieza de tejado con hidrolimpiadora en Vitoria-Gasteiz', width: 1408, height: 768 },
     },
     {
       slug: 'cubierta-con-panel-sandwich',
@@ -608,7 +608,7 @@ export const site = {
         ],
       },
       relatedServices: ['cubiertas-industriales-y-naves', 'aislamiento-de-cubiertas', 'impermeabilizacion-de-cubiertas'],
-      image: { src: '/images/panel-sandwich-vitoria.jpg', alt: 'Instalación de cubierta de panel sándwich en nave en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/panel-sandwich-vitoria-new.png', alt: 'Instalación de cubierta de panel sándwich en nave en Vitoria-Gasteiz', width: 1536, height: 1024 },
     },
     {
       slug: 'cubiertas-industriales-y-naves',
@@ -655,7 +655,7 @@ export const site = {
         ],
       },
       relatedServices: ['cubierta-con-panel-sandwich', 'impermeabilizacion-de-cubiertas', 'aislamiento-de-cubiertas'],
-      image: { src: '/images/cubiertas-industriales-vitoria.jpg', alt: 'Cubierta industrial de panel sándwich en nave en Vitoria-Gasteiz', width: 800, height: 534 },
+      image: { src: '/images/cubiertas-industriales-vitoria-new.png', alt: 'Cubierta industrial de panel sándwich en nave en Vitoria-Gasteiz', width: 1536, height: 1024 },
     },
   ] as ServiceConfig[],
 
