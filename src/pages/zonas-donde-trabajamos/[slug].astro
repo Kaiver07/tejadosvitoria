@@ -2,7 +2,6 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
 import { site } from '../../config/site.config';
 
 export async function getStaticPaths() {
@@ -80,11 +79,15 @@ const serviceSchema = {
           </p>
 
           <h2>Servicios que ofrecemos en {zone.name}</h2>
-          <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 mb-8">
+          <ul class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 mt-4 mb-8 list-none pl-0">
             {site.services.map((s) => (
-              <ServiceCard name={s.name} shortDesc={s.shortDesc} slug={s.slug} />
+              <li>
+                <a href={`/servicio/${s.slug}/`} class="text-brand-secondary hover:underline font-medium text-sm inline-flex items-center gap-1">
+                  → {s.name}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <h2>¿Por qué elegirnos en {zone.name}?</h2>
           <ul>
