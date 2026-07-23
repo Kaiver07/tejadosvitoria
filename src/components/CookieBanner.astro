@@ -59,12 +59,19 @@ import { site } from '../config/site.config';
   const STORAGE_KEY = 'cookie_consent';
   const banner = document.getElementById('cookie-banner');
 
+  function updateBannerOffset() {
+    const h = banner && !banner.classList.contains('hidden') ? banner.offsetHeight : 0;
+    document.documentElement.style.setProperty('--cookie-banner-h', `${h}px`);
+  }
+
   function hideBanner() {
     banner?.classList.add('hidden');
+    updateBannerOffset();
   }
 
   function showBanner() {
     banner?.classList.remove('hidden');
+    updateBannerOffset();
   }
 
   // Mostrar solo si no hay decisión previa
@@ -72,8 +79,11 @@ import { site } from '../config/site.config';
     showBanner();
   }
 
+  window.addEventListener('resize', updateBannerOffset);
+
   document.getElementById('cookie-accept')?.addEventListener('click', () => {
     localStorage.setItem(STORAGE_KEY, 'accepted');
+    window.loadGoogleAnalytics?.();
     hideBanner();
   });
 

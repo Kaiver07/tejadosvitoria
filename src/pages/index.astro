@@ -75,8 +75,8 @@ import { site } from '../config/site.config';
           </div>
         </div>
 
-        <!-- Columna derecha: 3 tarjetas de servicio rápido -->
-        <div class="flex flex-col gap-3">
+        <!-- Columna derecha: 3 tarjetas de servicio rápido (oculto en móvil, ya se repite en la sección Servicios) -->
+        <div class="hidden lg:flex lg:flex-col gap-3">
           {[
             {
               icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" />`,
@@ -155,7 +155,7 @@ import { site } from '../config/site.config';
           Soluciones completas para cualquier tipo de cubierta, desde una reparación urgente hasta la instalación de un tejado nuevo.
         </p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5">
         {site.services.map((s) => (
           <ServiceCard name={s.name} shortDesc={s.shortDesc} slug={s.slug} />
         ))}
@@ -252,7 +252,7 @@ import { site } from '../config/site.config';
           Tejados reparados, instalados e impermeabilizados en Vitoria-Gasteiz y la comarca de Álava.
         </p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
+      <div class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 pb-2">
         {[
           { src: '/images/trabajos/instalacion-tejado-nuevo-01.webp', alt: 'Instalación de tejado nuevo con teja cerámica' },
           { src: '/images/trabajos/impermeabilizacion-cubierta-plana-01.webp', alt: 'Impermeabilización de cubierta plana' },
@@ -262,7 +262,7 @@ import { site } from '../config/site.config';
           { src: '/images/trabajos/cubierta-panel-sandwich-01.webp', alt: 'Instalación de cubierta con panel sándwich' },
           { src: '/images/trabajos/cubierta-industrial-nave-01.webp', alt: 'Cubierta industrial en nave' },
         ].map((img) => (
-          <div class="overflow-hidden rounded-xl aspect-video bg-gray-200">
+          <div class="overflow-hidden rounded-xl aspect-video bg-gray-200 flex-shrink-0 w-[72%] sm:w-[45%] md:w-auto snap-center shadow-sm">
             <img
               src={img.src}
               alt={img.alt}
@@ -274,6 +274,7 @@ import { site } from '../config/site.config';
           </div>
         ))}
       </div>
+      <p class="text-center text-sm text-gray-400 mt-3 md:hidden">← Desliza para ver más →</p>
     </div>
   </section>
 

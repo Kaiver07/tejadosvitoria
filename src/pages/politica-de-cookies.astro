@@ -5,7 +5,7 @@ import { site } from '../config/site.config';
 
 const title = `Política de Cookies | ${site.name}`;
 const description = `Política de Cookies de ${site.name}. Información detallada sobre las cookies utilizadas en el sitio web conforme a la LSSI-CE y el RGPD.`;
-const updated = '1 de julio de 2026';
+const updated = '22 de julio de 2026';
 ---
 
 <PageLayout title={title} description={description}>
@@ -40,7 +40,7 @@ const updated = '1 de julio de 2026';
           <div class="space-y-3">
             {[
               ['Cookies técnicas o estrictamente necesarias', 'Son imprescindibles para el correcto funcionamiento del sitio. No requieren consentimiento previo. Sin ellas, algunas funcionalidades básicas como la navegación o el envío de formularios no funcionarían correctamente.'],
-              ['Cookies analíticas', 'Permiten cuantificar el número de usuarios y analizar el comportamiento de los visitantes del sitio (páginas visitadas, tiempo de permanencia, fuente de tráfico). Este sitio web no utiliza actualmente cookies analíticas de terceros (Google Analytics, Hotjar, etc.).'],
+              ['Cookies analíticas', 'Permiten cuantificar el número de usuarios y analizar el comportamiento de los visitantes del sitio (páginas visitadas, tiempo de permanencia, fuente de tráfico). Este sitio web utiliza Google Analytics 4 con esta finalidad, que solo se activa si el usuario da su consentimiento en el banner de cookies.'],
               ['Cookies de publicidad o rastreo', 'Se utilizan para mostrar publicidad relevante y medir su eficacia. Este sitio web no utiliza cookies de publicidad comportamental.'],
               ['Cookies de terceros', 'Instaladas por dominios externos integrados en el Sitio (mapas, vídeos embebidos, botones sociales). Su uso y condiciones dependen de la política de privacidad del proveedor correspondiente.'],
             ].map(([nombre, desc]) => (
@@ -56,7 +56,7 @@ const updated = '1 de julio de 2026';
         <div class="mb-8">
           <h2 class="text-xl font-bold text-gray-900 mb-3">3. Cookies utilizadas en este sitio web</h2>
           <p class="text-gray-600 mb-4 leading-relaxed">
-            Este sitio es un sitio web estático (generado en servidor sin código de lado cliente que instale cookies propias de sesión o seguimiento). La siguiente tabla detalla las únicas cookies o tecnologías de seguimiento que pueden instalarse como consecuencia de los servicios de terceros integrados:
+            Este sitio es un sitio web estático que no instala cookies de sesión propias. La siguiente tabla detalla las cookies o tecnologías de seguimiento que pueden instalarse como consecuencia de los servicios propios y de terceros integrados. Las marcadas como "analíticas" solo se activan si el usuario acepta el banner de cookies:
           </p>
           <div class="overflow-x-auto rounded-xl border border-gray-200">
             <table class="w-full text-sm">
@@ -73,7 +73,8 @@ const updated = '1 de julio de 2026';
                 {[
                   ['OpenStreetMap', 'Mapa embebido en /contacto', 'Técnica de tercero', 'Mostrar mapa de localización. OSM puede instalar cookies de sesión para el correcto funcionamiento del iframe.', 'Sesión'],
                   ['Web3Forms', 'Formulario de contacto', 'Técnica de tercero', 'Procesamiento del formulario. Pueden instalarse cookies técnicas para la verificación antispam (honeypot).', 'Sesión'],
-                  ['Vercel', 'Infraestructura del sitio', 'Técnica', 'Cookies de balanceo de carga y enrutamiento de red del proveedor de alojamiento.', 'Sesión / Corta duración'],
+                  ['Vercel', 'Infraestructura del sitio', 'Técnica', 'Cookies de balanceo de carga y enrutamiento de red del proveedor de alojamiento. Vercel Analytics (visitas agregadas) no utiliza cookies.', 'Sesión / Corta duración'],
+                  ['Google Analytics 4', 'Medición de audiencia (_ga, _ga_*)', 'Analítica de tercero (requiere consentimiento)', 'Estadísticas de visitas, páginas vistas y eventos (clics en llamar, envíos de formulario) con IP anonimizada. Solo se instala si el usuario pulsa "Aceptar" en el banner de cookies.', 'Hasta 13 meses'],
                 ].map(([prov, serv, tipo, fin, cad], i) => (
                   <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td class="px-4 py-3 font-medium text-gray-800 align-top">{prov}</td>
@@ -87,7 +88,7 @@ const updated = '1 de julio de 2026';
             </table>
           </div>
           <p class="text-gray-500 text-xs mt-2">
-            Las cookies técnicas estrictamente necesarias no requieren consentimiento previo del usuario conforme al artículo 22.2 LSSI-CE y a las directrices de la AEPD. No se instalan cookies de análisis, publicidad ni rastreo de comportamiento.
+            Las cookies técnicas estrictamente necesarias no requieren consentimiento previo del usuario conforme al artículo 22.2 LSSI-CE y a las directrices de la AEPD. Google Analytics 4 solo se activa tras el consentimiento expreso del usuario; si se rechaza o se ignora el banner, no se carga ni se instala ninguna cookie analítica. No se instalan cookies de publicidad ni de rastreo de comportamiento.
           </p>
         </div>
 

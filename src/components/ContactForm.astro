@@ -16,10 +16,12 @@ const {
   <p class="text-gray-300 mb-6">{subtitle}</p>
 
   <form
+    id="contact-form"
     action="https://api.web3forms.com/submit"
     method="POST"
     class="space-y-4"
     novalidate
+    data-phone-display={site.phoneDisplay}
   >
     <input type="hidden" name="access_key" value={site.formAccessKey} />
     <input type="hidden" name="subject" value={`Nuevo presupuesto - ${site.name}`} />
@@ -76,11 +78,14 @@ const {
     </div>
 
     <button
+      id="cf-submit"
       type="submit"
-      class="w-full btn-cta py-4 text-base font-bold"
+      class="w-full btn-cta py-4 text-base font-bold disabled:opacity-60 disabled:cursor-not-allowed"
     >
       Enviar solicitud de presupuesto
     </button>
+
+    <p id="cf-status" class="text-sm text-center hidden" role="status" aria-live="polite"></p>
 
     <p class="text-xs text-gray-400 text-center">
       Al enviar este formulario aceptas nuestra
@@ -89,3 +94,46 @@ const {
     </p>
   </form>
 </div>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('cf-submit') as HTMLButtonElement | null;
+  const status = document.getElementById('cf-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !status) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        window.vaTrack?.('form_submit');
+        form.reset();
+        form.classList.add('hidden');
+        status.textContent = '✅ ¡Gracias! Hemos recibido tu solicitud, te contactaremos en menos de 24 horas.';
+        status.className = 'text-sm text-center text-green-400 font-semibold';
+      } else {
+        throw new Error(data.message || 'Error desconocido');
+      }
+    } catch {
+      status.textContent = `Ha ocurrido un error al enviar el formulario. Llámanos directamente al ${form.dataset.phoneDisplay ?? ''} y te atendemos al momento.`;
+      status.className = 'text-sm text-center text-red-400 font-semibold';
+    } finally {
+      status.classList.remove('hidden');
+      if (submitBtn.disabled) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar solicitud de presupuesto';
+      }
+    }
+  });
+</script>

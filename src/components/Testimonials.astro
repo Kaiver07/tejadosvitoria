@@ -2,9 +2,9 @@
 import { site } from '../config/site.config';
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex md:grid md:grid-cols-2 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 pb-2">
   {site.testimonials.map((t) => (
-    <blockquote class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col gap-4">
+    <blockquote class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col gap-4 flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center shadow-sm">
       <!-- Estrellas -->
       <div class="flex gap-0.5" aria-label={`Valoración: ${t.rating} de 5 estrellas`}>
         {Array.from({ length: t.rating }).map(() => (
@@ -21,3 +21,4 @@ import { site } from '../config/site.config';
     </blockquote>
   ))}
 </div>
+<p class="text-center text-sm text-gray-400 mt-3 md:hidden">← Desliza para ver más opiniones →</p>
