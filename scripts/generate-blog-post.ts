@@ -11,7 +11,7 @@ interface CalendarEntry {
   slug: string;
   title: string;
   description: string;
-  image: { src: string; alt: string; width: number; height: number };
+  image: { src: string; alt: string };
   relatedServices: string[];
   brief: string;
   status: 'pending' | 'published';
@@ -41,8 +41,6 @@ publishDate: ${publishDate}
 image:
   src: ${JSON.stringify(entry.image.src)}
   alt: ${JSON.stringify(entry.image.alt)}
-  width: ${entry.image.width}
-  height: ${entry.image.height}
 relatedServices:
 ${relatedYaml || '  []'}
 ---

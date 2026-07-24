@@ -3,10 +3,8 @@ title: "Cómo saber si necesitas retejar el tejado: 7 señales que no debes igno
 description: "Siete señales que indican que un tejado necesita retejado completo en lugar de una reparación puntual, explicadas por especialistas en Vitoria-Gasteiz."
 publishDate: 2026-06-16
 image:
-  src: "/images/retejado-vitoria-new.webp"
+  src: "../../images/retejado-vitoria-new.webp"
   alt: "Retejado completo de una cubierta con teja cerámica en Álava"
-  width: 1408
-  height: 768
 relatedServices:
   - "retejado-sustitucion-de-tejas"
   - "reparacion-de-tejados"

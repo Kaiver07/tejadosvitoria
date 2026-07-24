@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import PageLayout from '../../layouts/PageLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
@@ -58,7 +59,7 @@ const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
 <PageLayout
   title={service.title}
   description={service.metaDescription}
-  ogImage={service.image.src}
+  ogImage={service.image.src.src}
   schema={schemas}
 >
 
@@ -96,11 +97,11 @@ const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
         <div class="lg:col-span-2 service-prose">
 
           <!-- Imagen del servicio -->
-          <img
+          <Image
             src={service.image.src}
             alt={service.image.alt}
-            width={service.image.width}
-            height={service.image.height}
+            widths={[400, 800, 1408]}
+            sizes="(min-width: 1024px) 800px, 100vw"
             loading="eager"
             fetchpriority="high"
             class="w-full rounded-xl mb-8 object-cover aspect-video bg-gray-200"

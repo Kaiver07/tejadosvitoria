@@ -3,10 +3,8 @@ title: "Señales de humedad en el tejado que no debes ignorar"
 description: "Cómo identificar a tiempo la humedad en el tejado antes de que dañe la estructura: manchas, olores, condensación y otros avisos habituales en Álava."
 publishDate: 2026-07-01
 image:
-  src: "/images/impermeabilizacion-cubiertas-vitoria.webp"
+  src: "../../images/impermeabilizacion-cubiertas-vitoria.webp"
   alt: "Revisión de humedades en una cubierta en Vitoria-Gasteiz"
-  width: 1408
-  height: 768
 relatedServices:
   - "reparacion-de-goteras-y-humedades"
   - "impermeabilizacion-de-cubiertas"

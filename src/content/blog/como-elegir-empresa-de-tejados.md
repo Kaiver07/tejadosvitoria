@@ -3,10 +3,8 @@ title: "Cómo elegir una empresa de tejados: qué preguntar antes de contratar"
 description: "Preguntas clave antes de contratar a un tejadista en Vitoria-Gasteiz o Álava: garantía, seguro de responsabilidad civil, presupuesto cerrado y referencias."
 publishDate: 2026-07-24
 image:
-  src: "/images/reparacion-tejados-vitoria-new.webp"
+  src: "../../images/reparacion-tejados-vitoria-new.webp"
   alt: "Técnico de tejados revisando una cubierta antes de presupuestar"
-  width: 1408
-  height: 768
 relatedServices:
   - "reparacion-de-tejados"
 ---

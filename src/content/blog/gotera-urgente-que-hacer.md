@@ -3,10 +3,8 @@ title: "Tienes una gotera urgente: qué hacer mientras llega el profesional"
 description: "Pasos inmediatos para minimizar daños si tienes una gotera activa en casa, y cuándo es una urgencia real que requiere actuación en el día."
 publishDate: 2026-07-20
 image:
-  src: "/images/reparacion-tejados-vitoria-new.webp"
+  src: "../../images/reparacion-tejados-vitoria-new.webp"
   alt: "Reparación urgente de gotera en un tejado en Álava"
-  width: 1408
-  height: 768
 relatedServices:
   - "reparacion-de-goteras-y-humedades"
   - "reparacion-de-tejados"

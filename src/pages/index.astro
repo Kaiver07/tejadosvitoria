@@ -1,10 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ContactForm from '../components/ContactForm.astro';
 import ZonesList from '../components/ZonesList.astro';
 import BlogCard from '../components/BlogCard.astro';
+import heroImg from '../images/reparacion-tejados-vitoria-new.webp';
 import { site } from '../config/site.config';
 
 const latestPosts = (await getCollection('blog', ({ data }) => !data.draft))
@@ -15,17 +17,21 @@ const latestPosts = (await getCollection('blog', ({ data }) => !data.draft))
 <PageLayout
   title={site.defaultTitle}
   description={site.defaultDescription}
-  preloadImage="/images/reparacion-tejados-vitoria-new.webp"
 >
 
   <!-- ======================== HERO ======================== -->
   <section class="relative bg-brand-primary text-white overflow-hidden min-h-[580px] flex items-center">
     <!-- Imagen de fondo con overlay -->
-    <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/reparacion-tejados-vitoria-new.webp');"
+    <Image
+      src={heroImg}
+      alt=""
       aria-hidden="true"
-    ></div>
+      widths={[640, 1024, 1408]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
     <div class="absolute inset-0 bg-brand-primary/82" aria-hidden="true"></div>
 
     <div class="relative z-10 section-container w-full py-14 lg:py-20">
