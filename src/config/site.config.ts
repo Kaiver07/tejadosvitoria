@@ -71,9 +71,9 @@ export const site = {
   gaMeasurementId: 'G-M2Q34T9BJ3',
 
   // SEO defaults
-  defaultTitle: 'Tejados Vitoria Express | Reparación de Tejados en Vitoria-Gasteiz',
+  defaultTitle: 'Reparación de Tejados Vitoria-Gasteiz | 945 49 29 39',
   defaultDescription:
-    'Expertos en reparación e instalación de tejados en Vitoria-Gasteiz. ☎ 945 49 29 39 · Presupuesto gratis · 18 años de experiencia · Urgencias 24h.',
+    'Reparación e instalación de tejados en Vitoria-Gasteiz con garantía por escrito. Presupuesto gratis, 18 años de experiencia y urgencias 24h.',
   defaultOgImage: '/images/og-default.jpg',
 
   // Marca (colores documentados — se aplican en global.css vía @theme)
@@ -95,9 +95,9 @@ export const site = {
       slug: 'reparacion-de-tejados',
       name: 'Reparación de Tejados',
       shortDesc: 'Diagnóstico y reparación de cualquier daño en tejado, con garantía por escrito y actuación en 24 horas.',
-      title: 'Reparación de Tejados en Vitoria | Tejados Vitoria Express',
+      title: 'Reparación de Tejados en Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Reparación de tejados en Vitoria-Gasteiz. Presupuesto gratis ☎ 945 49 29 39. Actuamos en 24 h. 18 años de experiencia. Sin sorpresas en el precio.',
+        'Reparamos tejados en Vitoria-Gasteiz con diagnóstico gratuito y actuación en 24h. Garantía por escrito y presupuesto cerrado sin sorpresas.',
       h1: 'Reparación de Tejados en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -148,9 +148,9 @@ export const site = {
       slug: 'instalacion-de-tejados-nuevos',
       name: 'Instalación de Tejados Nuevos',
       shortDesc: 'Instalamos tejados nuevos a medida con materiales de primera calidad adaptados al clima de Álava.',
-      title: 'Tejados Nuevos en Vitoria-Gasteiz | Tejados Vitoria Express',
+      title: 'Tejados Nuevos en Vitoria-Gasteiz | 945 49 29 39',
       metaDescription:
-        '✅ Instalación de tejados nuevos en Vitoria-Gasteiz. Teja cerámica, hormigón y pizarra. ☎ 945 49 29 39 · Presupuesto gratis · Garantía 10 años.',
+        'Instalación de tejados nuevos en Vitoria-Gasteiz con teja cerámica, hormigón o pizarra. Presupuesto gratis y garantía de 10 años.',
       h1: 'Instalación de Tejados Nuevos en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -199,9 +199,9 @@ export const site = {
       slug: 'impermeabilizacion-de-cubiertas',
       name: 'Impermeabilización de Cubiertas',
       shortDesc: 'Impermeabilizamos cubiertas planas e inclinadas con sistemas de larga duración y garantía de estanqueidad.',
-      title: 'Impermeabilizar Cubierta en Vitoria | Tejados Vitoria Express',
+      title: 'Impermeabilizar Cubierta en Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Impermeabilización de cubiertas en Vitoria-Gasteiz. Cubiertas planas e inclinadas. ☎ 945 49 29 39. Garantía 10 años. Presupuesto gratis sin compromiso.',
+        'Impermeabilización de cubiertas planas e inclinadas en Vitoria-Gasteiz. Garantía de estanqueidad de 10 años. Presupuesto sin compromiso.',
       h1: 'Impermeabilización de Cubiertas en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -245,9 +245,9 @@ export const site = {
       slug: 'reparacion-de-goteras-y-humedades',
       name: 'Reparación de Goteras y Humedades',
       shortDesc: 'Localizamos y reparamos el origen de cualquier gotera o humedad por cubierta, con garantía de estanqueidad.',
-      title: 'Reparación Goteras y Humedades Vitoria | T. Vitoria Express',
+      title: 'Reparación Goteras y Humedades Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Reparación de goteras en Vitoria-Gasteiz. Localización garantizada del origen ☎ 945 49 29 39. Urgencias 24h. Presupuesto gratis. Sin perforar paredes.',
+        'Localizamos y reparamos el origen real de tu gotera en Vitoria-Gasteiz, sin perforar paredes. Urgencias 24h y presupuesto gratis.',
       h1: 'Reparación de Goteras y Humedades en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -293,9 +293,9 @@ export const site = {
       slug: 'instalacion-de-canalones',
       name: 'Instalación de Canalones',
       shortDesc: 'Instalamos y reparamos canalones y bajantes de aluminio, zinc o PVC con acabados a medida.',
-      title: 'Instalación de Canalones en Vitoria | Tejados Vitoria Express',
+      title: 'Instalación de Canalones en Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Instalación y reparación de canalones en Vitoria-Gasteiz. Aluminio, zinc y PVC. ☎ 945 49 29 39. Presupuesto gratis. Montaje en un día. 18 años experiencia.',
+        'Instalación y reparación de canalones de aluminio, zinc o PVC en Vitoria-Gasteiz. Montaje en un día. Presupuesto gratis.',
       h1: 'Instalación de Canalones en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -340,9 +340,9 @@ export const site = {
       slug: 'retejado-sustitucion-de-tejas',
       name: 'Retejado — Sustitución de Tejas',
       shortDesc: 'Retejado completo o parcial con teja nueva, conservando la estructura si está en buen estado.',
-      title: 'Retejado en Vitoria-Gasteiz | Tejados Vitoria Express',
+      title: 'Retejado en Vitoria-Gasteiz | 945 49 29 39',
       metaDescription:
-        '✅ Retejado y sustitución de tejas en Vitoria-Gasteiz desde 35 €/m². ☎ 945 49 29 39. Presupuesto gratuito. 18 años de experiencia. Garantía por escrito.',
+        'Retejado y sustitución de tejas en Vitoria-Gasteiz desde 35 €/m². 18 años de experiencia y garantía por escrito.',
       h1: 'Retejado y Sustitución de Tejas en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -386,9 +386,9 @@ export const site = {
       slug: 'instalacion-de-claraboyas-y-velux',
       name: 'Instalación de Claraboyas y Velux',
       shortDesc: 'Instalamos claraboyas y ventanas de tejado Velux con kit de impermeabilización integrado y garantía total.',
-      title: 'Claraboyas y Velux en Vitoria | Tejados Vitoria Express',
+      title: 'Claraboyas y Velux en Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Instalación de claraboyas y ventanas Velux en Vitoria-Gasteiz. Desde 400 €. ☎ 945 49 29 39. Instalación certificada. Garantía. Presupuesto gratis.',
+        'Instalación certificada de claraboyas y ventanas Velux en Vitoria-Gasteiz desde 400 €, con garantía total y presupuesto gratis.',
       h1: 'Instalación de Claraboyas y Ventanas Velux en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -431,9 +431,9 @@ export const site = {
       slug: 'aislamiento-de-cubiertas',
       name: 'Aislamiento de Cubiertas',
       shortDesc: 'Mejoramos el aislamiento térmico y acústico de tu cubierta para reducir la factura energética y ganar confort.',
-      title: 'Aislamiento de Cubiertas en Vitoria | Tejados Vitoria Express',
+      title: 'Aislamiento de Cubiertas en Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Aislamiento térmico de cubiertas en Vitoria-Gasteiz. Reduce hasta un 30% la factura de calefacción. ☎ 945 49 29 39. Presupuesto gratis. 18 años experiencia.',
+        'Aislamiento térmico de cubiertas en Vitoria-Gasteiz: reduce hasta un 30% tu factura de calefacción. Presupuesto gratis.',
       h1: 'Aislamiento de Cubiertas en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -477,9 +477,9 @@ export const site = {
       slug: 'rehabilitacion-de-fachadas',
       name: 'Rehabilitación de Fachadas',
       shortDesc: 'Rehabilitamos fachadas deterioradas: limpieza, reparación de grietas, impermeabilización y pintura exterior.',
-      title: 'Rehabilitación de Fachadas Vitoria | Tejados Vitoria Express',
+      title: 'Rehabilitación de Fachadas Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Rehabilitación de fachadas en Vitoria-Gasteiz. Grietas, humedades, pintura. ☎ 945 49 29 39. Presupuesto gratis. Andamio incluido. 18 años de experiencia.',
+        'Rehabilitación de fachadas en Vitoria-Gasteiz: grietas, humedades y pintura exterior. Andamio incluido y presupuesto gratis.',
       h1: 'Rehabilitación de Fachadas en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -524,9 +524,9 @@ export const site = {
       slug: 'limpieza-de-tejados',
       name: 'Limpieza de Tejados',
       shortDesc: 'Limpiamos tejados con hidrolimpiadora de alta presión, eliminando musgo, líquenes y suciedad acumulada.',
-      title: 'Limpieza de Tejados en Vitoria | Tejados Vitoria Express',
+      title: 'Limpieza de Tejados en Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Limpieza profesional de tejados en Vitoria-Gasteiz desde 8 €/m². ☎ 945 49 29 39. Eliminamos musgo, líquenes y suciedad. Presupuesto gratis. 18 años experiencia.',
+        'Limpieza profesional de tejados en Vitoria-Gasteiz desde 8 €/m². Eliminamos musgo y líquenes con tratamiento antihongos. Presupuesto gratis.',
       h1: 'Limpieza de Tejados en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -570,9 +570,9 @@ export const site = {
       slug: 'cubierta-con-panel-sandwich',
       name: 'Cubierta con Panel Sándwich',
       shortDesc: 'Instalamos cubiertas con panel sándwich aislante para naves, viviendas y ampliaciones industriales.',
-      title: 'Panel Sándwich Vitoria-Gasteiz | Tejados Vitoria Express',
+      title: 'Panel Sándwich Vitoria-Gasteiz | 945 49 29 39',
       metaDescription:
-        '✅ Cubiertas con panel sándwich en Vitoria-Gasteiz desde 45 €/m². ☎ 945 49 29 39. Instalación rápida. Aislamiento incluido. Presupuesto gratis. 18 años.',
+        'Cubiertas de panel sándwich en Vitoria-Gasteiz desde 45 €/m², con aislamiento incluido e instalación rápida. Presupuesto gratis.',
       h1: 'Cubierta con Panel Sándwich en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -615,9 +615,9 @@ export const site = {
       slug: 'cubiertas-industriales-y-naves',
       name: 'Cubiertas Industriales y Naves',
       shortDesc: 'Soluciones integrales de cubierta para naves industriales, polígonos y grandes superficies en Álava.',
-      title: 'Cubiertas Industriales Vitoria | Tejados Vitoria Express',
+      title: 'Cubiertas Industriales Vitoria | 945 49 29 39',
       metaDescription:
-        '✅ Cubiertas industriales y naves en Vitoria-Gasteiz y Álava. ☎ 945 49 29 39. Panel sándwich, chapa y membrana. Presupuesto gratis. 18 años de experiencia.',
+        'Cubiertas industriales y para naves en Vitoria-Gasteiz y Álava: panel sándwich, chapa y membrana. 18 años de experiencia.',
       h1: 'Cubiertas Industriales y Naves en Vitoria-Gasteiz',
       content: {
         intro: [

@@ -16,8 +16,8 @@ export async function getStaticPaths() {
 
 const { zone, nearby } = Astro.props;
 
-const title = `Tejados en ${zone.name} | ${site.name}`;
-const metaDescription = `Reparación, instalación y mantenimiento de tejados en ${zone.name} (Álava). Presupuesto gratis, garantía por escrito y ${site.yearsExperience} años de experiencia. ☎ ${site.phoneDisplay}`;
+const title = `Tejados en ${zone.name} | ${site.phoneDisplay}`;
+const metaDescription = `Reparación, instalación y mantenimiento de tejados en ${zone.name} (Álava). Presupuesto gratis, garantía por escrito y ${site.yearsExperience} años de experiencia.`;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
