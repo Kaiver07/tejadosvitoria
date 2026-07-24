@@ -58,6 +58,7 @@ const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
 <PageLayout
   title={service.title}
   description={service.metaDescription}
+  ogImage={service.image.src}
   schema={schemas}
 >
 

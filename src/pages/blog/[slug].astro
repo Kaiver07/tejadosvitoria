@@ -54,7 +54,7 @@ const articleSchema = {
 };
 ---
 
-<PageLayout title={`${post.data.title} | ${site.name}`} description={post.data.description} schema={articleSchema}>
+<PageLayout title={`${post.data.title} | ${site.name}`} description={post.data.description} ogImage={post.data.image.src} schema={articleSchema}>
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="section-container py-3">
