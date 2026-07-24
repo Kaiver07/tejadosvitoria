@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 const { zone, nearby } = Astro.props;
 
 const title = `Tejados en ${zone.name} | ${site.phoneDisplay}`;
-const metaDescription = `Reparación, instalación y mantenimiento de tejados en ${zone.name} (Álava). Presupuesto gratis, garantía por escrito y ${site.yearsExperience} años de experiencia.`;
+const metaDescription = `${zone.description} Presupuesto gratis, garantía por escrito y ${site.yearsExperience} años de experiencia.`;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -74,6 +74,9 @@ const serviceSchema = {
           <p>
             En {site.name} llevamos {site.yearsExperience} años reparando, instalando y manteniendo tejados en Vitoria-Gasteiz y toda la comarca de Álava, incluido {zone.name}. Nos desplazamos sin coste adicional dentro de nuestra área habitual de trabajo, con presupuesto gratuito y diagnóstico fotográfico antes de empezar cualquier trabajo.
           </p>
+
+          <h2>Tejados en {zone.name}: lo que debes saber</h2>
+          <p>{zone.localInfo}</p>
           <p>
             Trabajamos con materiales homologados para el clima de la zona y aplicamos <strong>garantía por escrito</strong> en toda reparación o instalación, tanto en viviendas particulares y caseríos como en comunidades de propietarios y naves industriales.
           </p>
