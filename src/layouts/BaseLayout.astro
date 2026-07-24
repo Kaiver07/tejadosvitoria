@@ -8,6 +8,7 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   schema?: object | object[];
+  preloadImage?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = site.defaultDescription,
   ogImage = site.defaultOgImage,
   schema,
+  preloadImage,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -71,6 +73,7 @@ const schemas = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

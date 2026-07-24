@@ -17,7 +17,23 @@ export async function getStaticPaths() {
 const { zone, nearby } = Astro.props;
 
 const title = `Tejados en ${zone.name} | ${site.phoneDisplay}`;
-const metaDescription = `${zone.description} Presupuesto gratis, garantía por escrito y ${site.yearsExperience} años de experiencia.`;
+
+// Google trunca las meta descriptions por encima de ~155-160 caracteres;
+// zone.description (pensada también como subtítulo visible en el hero) puede
+// superar ese límite, así que aquí se recorta por palabra completa en vez de
+// dejar que el buscador la corte a mitad de frase.
+const CTA_SUFFIX = ' Presupuesto gratis y garantía por escrito.';
+const META_MAX_LENGTH = 155;
+
+function buildMetaDescription(description: string): string {
+  const withCta = `${description}${CTA_SUFFIX}`;
+  if (withCta.length <= META_MAX_LENGTH) return withCta;
+  if (description.length <= META_MAX_LENGTH) return description;
+  const truncated = description.slice(0, META_MAX_LENGTH - 1);
+  return `${truncated.slice(0, truncated.lastIndexOf(' '))}…`;
+}
+
+const metaDescription = buildMetaDescription(zone.description);
 
 const serviceSchema = {
   '@context': 'https://schema.org',

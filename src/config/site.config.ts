@@ -73,8 +73,6 @@ export const site = {
   // Marca (colores documentados — se aplican en global.css vía @theme)
   colors: { primary: '#1e3a5f', secondary: '#e85d04', accent: '#f4a261' },
 
-  social: { facebook: '', instagram: '' },
-
   legal: {
     companyName: 'Tejados Vitoria Express S.L.',
     cif: 'B01000000',
