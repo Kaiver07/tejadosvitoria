@@ -1,0 +1,155 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { site } from '../../config/site.config';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, allPosts: posts },
+  }));
+}
+
+const { post, allPosts } = Astro.props;
+const { Content } = await render(post);
+
+const relatedServices = post.data.relatedServices
+  .map((slug) => site.services.find((s) => s.slug === slug))
+  .filter(Boolean);
+
+const otherPosts = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const formattedDate = post.data.publishDate.toLocaleDateString('es-ES', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: `${site.url}${post.data.image.src}`,
+  datePublished: post.data.publishDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
+  author: {
+    '@type': site.schemaType,
+    '@id': `${site.url}/#business`,
+    name: site.name,
+  },
+  publisher: {
+    '@type': site.schemaType,
+    '@id': `${site.url}/#business`,
+    name: site.name,
+  },
+  mainEntityOfPage: `${site.url}/blog/${post.id}/`,
+};
+---
+
+<PageLayout title={`${post.data.title} | ${site.name}`} description={post.data.description} schema={articleSchema}>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="section-container py-3">
+      <Breadcrumb items={[{ name: 'Blog', href: '/blog/' }, { name: post.data.title, href: `/blog/${post.id}/` }]} />
+    </div>
+  </div>
+
+  <section class="bg-brand-primary text-white">
+    <div class="section-container py-12 lg:py-16">
+      <div class="max-w-2xl">
+        <p class="text-gray-400 text-sm uppercase tracking-wide mb-3">{formattedDate}</p>
+        <h1 class="text-3xl sm:text-4xl font-bold leading-tight mb-4">{post.data.title}</h1>
+        <p class="text-lg text-gray-300">{post.data.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        <div class="lg:col-span-2 service-prose">
+          <img
+            src={post.data.image.src}
+            alt={post.data.image.alt}
+            width={post.data.image.width}
+            height={post.data.image.height}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full rounded-xl mb-8 object-cover aspect-video bg-gray-200"
+          />
+
+          <Content />
+
+          {relatedServices.length > 0 && (
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200 not-prose">
+              <h3 class="font-bold text-brand-primary mb-3">Servicios relacionados con este artículo</h3>
+              <ul class="space-y-1.5">
+                {relatedServices.map((s) => s && (
+                  <li>
+                    <a href={`/servicio/${s.slug}/`} class="text-brand-secondary hover:underline font-medium text-sm">
+                      → {s.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div id="contacto-blog" class="sticky top-24">
+            <ContactForm
+              title="Presupuesto Gratis"
+              subtitle="Sin compromiso · Respondemos en 24 h"
+            />
+            <div class="mt-4 text-center">
+              <a href={`tel:${site.phone}`} class="text-brand-secondary font-bold text-lg hover:underline">
+                ☎ {site.phoneDisplay}
+              </a>
+              <p class="text-gray-500 text-xs mt-1">{site.hours}</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      {otherPosts.length > 0 && (
+        <div class="mt-16">
+          <h2 class="text-2xl font-bold text-brand-primary mb-6">Más artículos del blog</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherPosts.map((p) => (
+              <BlogCard
+                slug={p.id}
+                title={p.data.title}
+                description={p.data.description}
+                publishDate={p.data.publishDate}
+                image={p.data.image}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="bg-brand-secondary py-10">
+    <div class="section-container text-center text-white">
+      <p class="text-xl font-bold mb-4">
+        ¿Necesitas un tejadista en Vitoria-Gasteiz o Álava? Llámanos ahora.
+      </p>
+      <a href={`tel:${site.phone}`} class="bg-white text-brand-secondary font-bold text-xl px-10 py-4 rounded-xl hover:bg-gray-100 transition-colors inline-block">
+        ☎ {site.phoneDisplay}
+      </a>
+    </div>
+  </section>
+
+</PageLayout>

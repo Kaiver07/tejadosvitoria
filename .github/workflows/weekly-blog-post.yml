@@ -1,0 +1,56 @@
+name: Publicar artículo semanal del blog
+
+on:
+  schedule:
+    # Todos los lunes a las 07:00 UTC (08:00/09:00 hora de Vitoria-Gasteiz según horario de verano)
+    - cron: '0 7 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Generar artículo del calendario editorial
+        id: generate
+        env:
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+        run: npm run generate-blog-post
+
+      - name: Commit y push del nuevo artículo
+        if: steps.generate.outputs.published == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog/${{ steps.generate.outputs.slug }}.md src/content/blog-calendar.json
+          git commit -m "Publicar artículo del blog: ${{ steps.generate.outputs.slug }}"
+          git push
+
+      - name: Esperar a que Vercel despliegue el nuevo contenido
+        if: steps.generate.outputs.published == 'true'
+        run: sleep 90
+
+      - name: Avisar a los buscadores (IndexNow) del nuevo artículo
+        if: steps.generate.outputs.published == 'true'
+        env:
+          SLUG: ${{ steps.generate.outputs.slug }}
+          # Clave pública de IndexNow (no es un secreto: vive en public/<clave>.txt para su verificación)
+          INDEXNOW_KEY: '603f6ec1f9e812a6c98487d7b90a932c'
+        run: |
+          curl -s "https://api.indexnow.org/indexnow?url=https://reparaciondetejadosvitoria.es/blog/${SLUG}/&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt" || true
+          curl -s "https://api.indexnow.org/indexnow?url=https://reparaciondetejadosvitoria.es/blog/&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt" || true
+          curl -s "https://api.indexnow.org/indexnow?url=https://reparaciondetejadosvitoria.es/sitemap-index.xml&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt" || true
