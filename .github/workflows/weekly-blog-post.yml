@@ -51,6 +51,10 @@ jobs:
           # Clave pública de IndexNow (no es un secreto: vive en public/<clave>.txt para su verificación)
           INDEXNOW_KEY: '603f6ec1f9e812a6c98487d7b90a932c'
         run: |
-          curl -s "https://api.indexnow.org/indexnow?url=https://reparaciondetejadosvitoria.es/blog/${SLUG}/&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt" || true
-          curl -s "https://api.indexnow.org/indexnow?url=https://reparaciondetejadosvitoria.es/blog/&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt" || true
-          curl -s "https://api.indexnow.org/indexnow?url=https://reparaciondetejadosvitoria.es/sitemap-index.xml&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt" || true
+          for url in \
+            "https://reparaciondetejadosvitoria.es/blog/${SLUG}/" \
+            "https://reparaciondetejadosvitoria.es/blog/" \
+            "https://reparaciondetejadosvitoria.es/sitemap-index.xml"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://api.indexnow.org/indexnow?url=${url}&key=${INDEXNOW_KEY}&keyLocation=https://reparaciondetejadosvitoria.es/${INDEXNOW_KEY}.txt")
+            echo "IndexNow [$code] $url"
+          done
