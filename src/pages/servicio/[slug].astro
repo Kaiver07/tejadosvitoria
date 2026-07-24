@@ -107,7 +107,7 @@ const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
 
           <!-- Intro paragraphs -->
           {service.content.intro.map((p) => (
-            <p>{p}</p>
+            <p set:html={p} />
           ))}
 
           <!-- Qué hacemos -->
@@ -133,7 +133,7 @@ const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
           {service.content.faqs.map((faq) => (
             <div class="border border-gray-200 rounded-lg p-5 mb-3">
               <h3 class="font-semibold text-gray-800 mb-2">{faq.q}</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              <p class="text-gray-600 text-sm leading-relaxed" set:html={faq.a} />
             </div>
           ))}
 

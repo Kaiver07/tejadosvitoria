@@ -61,3 +61,6 @@
 .service-prose ul {
   @apply list-disc list-inside space-y-1 text-gray-600 mb-4;
 }
+.service-prose a {
+  @apply text-brand-secondary font-medium hover:underline;
+}
