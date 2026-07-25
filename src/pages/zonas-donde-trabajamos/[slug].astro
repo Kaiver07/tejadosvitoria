@@ -1,39 +1,29 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import { site } from '../../config/site.config';
 
 export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+
   return site.zones.map((zone, index) => ({
     params: { slug: zone.slug },
     props: {
       zone,
       nearby: site.zones.filter((_, i) => i !== index).slice(0, 6),
+      relatedPosts: zone.relatedBlogSlugs
+        .map((slug) => posts.find((p) => p.id === slug))
+        .filter((p) => p !== undefined),
     },
   }));
 }
 
-const { zone, nearby } = Astro.props;
+const { zone, nearby, relatedPosts } = Astro.props;
 
 const title = `Tejados en ${zone.name} | ${site.phoneDisplay}`;
-
-// Google trunca las meta descriptions por encima de ~155-160 caracteres;
-// zone.description (pensada también como subtítulo visible en el hero) puede
-// superar ese límite, así que aquí se recorta por palabra completa en vez de
-// dejar que el buscador la corte a mitad de frase.
-const CTA_SUFFIX = ' Presupuesto gratis y garantía por escrito.';
-const META_MAX_LENGTH = 155;
-
-function buildMetaDescription(description: string): string {
-  const withCta = `${description}${CTA_SUFFIX}`;
-  if (withCta.length <= META_MAX_LENGTH) return withCta;
-  if (description.length <= META_MAX_LENGTH) return description;
-  const truncated = description.slice(0, META_MAX_LENGTH - 1);
-  return `${truncated.slice(0, truncated.lastIndexOf(' '))}…`;
-}
-
-const metaDescription = buildMetaDescription(zone.description);
+const metaDescription = zone.metaDescription;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -115,6 +105,21 @@ const serviceSchema = {
             <li><strong>Garantía por escrito</strong> en mano de obra y materiales.</li>
             <li><strong>Desplazamiento incluido</strong> dentro de nuestra área de trabajo habitual.</li>
           </ul>
+
+          {relatedPosts.length > 0 && (
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200 not-prose">
+              <h3 class="font-bold text-brand-primary mb-3">Consejos sobre tejados</h3>
+              <ul class="space-y-1.5">
+                {relatedPosts.map((p) => (
+                  <li>
+                    <a href={`/blog/${p.id}/`} class="text-brand-secondary hover:underline font-medium text-sm">
+                      → {p.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {nearby.length > 0 && (
             <div class="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200 not-prose">

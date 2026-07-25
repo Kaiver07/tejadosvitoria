@@ -1,5 +1,6 @@
 ---
 title: "Cuánto cuesta reparar una gotera en el tejado (precios orientativos 2026)"
+seoTitle: "Cuánto cuesta reparar una gotera (precios 2026) | Tejados Vitoria"
 description: "Precios orientativos para reparar una gotera en Vitoria-Gasteiz y Álava según su causa y gravedad, y qué factores hacen que el presupuesto suba o baje."
 publishDate: 2026-06-02
 image:

@@ -47,6 +47,8 @@ export interface Zone {
   slug: string;
   description: string;
   localInfo: string;
+  metaDescription: string;
+  relatedBlogSlugs: string[];
 }
 
 // ============================================================
@@ -88,10 +90,11 @@ export const site = {
   // Marca (colores documentados — se aplican en global.css vía @theme)
   colors: { primary: '#1e3a5f', secondary: '#e85d04', accent: '#f4a261' },
 
+  // Titular del sitio: autónomo (persona física), no sociedad — sin CIF ni Registro Mercantil.
   legal: {
-    companyName: 'Tejados Vitoria Express S.L.',
-    cif: 'B01000000',
-    registroMercantil: 'Registro Mercantil de Álava, Tomo 123, Folio 45, Hoja VI-1234',
+    legalName: 'Andrea Iglesias Magalde',
+    nif: '71706738Y',
+    tradeName: 'Tejados Vitoria Express',
   },
 
   // ============================================================
@@ -678,6 +681,9 @@ export const site = {
         'Nuestra ciudad de referencia. Atendemos todos los barrios: Casco Medieval, Ensanche, Salburua, Ariznavarra, Lakua, Abetxuko, Arriaga, Zabalgana y resto de barrios de Vitoria-Gasteiz.',
       localInfo:
         'El clima de transición entre oceánico y continental de Vitoria-Gasteiz, con lluvias frecuentes durante buena parte del año, castiga especialmente los tejados de teja cerámica curva del Casco Medieval y las cubiertas de los bloques de los ensanches de Lakua, Salburua y Zabalgana tras las heladas invernales. También reparamos chalets y viviendas unifamiliares en Armentia, Gardelegi y el resto de barrios periféricos de la ciudad.',
+      metaDescription:
+        'Reparamos e instalamos tejados en Vitoria-Gasteiz: Casco Medieval, Ensanche, Lakua, Salburua y resto de barrios. Presupuesto gratis.',
+      relatedBlogSlugs: ['cuanto-cuesta-reparar-una-gotera', 'como-elegir-empresa-de-tejados'],
     },
     {
       name: 'Amurrio',
@@ -686,6 +692,9 @@ export const site = {
         'Amurrio es uno de los municipios más poblados de la comarca de Ayala. Atendemos reparaciones e instalaciones de tejados en todo el término municipal, incluyendo su casco urbano y pedanías.',
       localInfo:
         'Por su cercanía a Bizkaia, el clima en Amurrio es más húmedo y lluvioso que en la capital alavesa, lo que favorece la aparición de musgo y humedades en los tejados de teja curva y pizarra de los caseríos tradicionales del valle. También trabajamos en los adosados y viviendas unifamiliares de construcción más reciente del casco urbano.',
+      metaDescription:
+        'Reparamos e instalamos tejados en Amurrio y sus pedanías, en la comarca de Ayala. Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['senales-de-humedad-en-el-tejado', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Llodio (Laudio)',
@@ -694,6 +703,9 @@ export const site = {
         'En Llodio trabajamos tanto en el área residencial como en la zona industrial del municipio. Cubiertas de naves, tejados de viviendas unifamiliares y comunidades de propietarios.',
       localInfo:
         'La tradición siderúrgica de Llodio dejó un importante polígono industrial en el que reparamos con frecuencia cubiertas de chapa y fibrocemento de naves, además de los tejados residenciales del núcleo urbano. El clima oceánico del valle del Nervión, con precipitaciones abundantes todo el año, exige revisiones periódicas de canalones y juntas.',
+      metaDescription:
+        'Reparamos tejados de vivienda y naves industriales en Llodio (Laudio). Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['gotera-urgente-que-hacer', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Salvatierra (Agurain)',
@@ -702,6 +714,9 @@ export const site = {
         'Capital de la Llanada Oriental, con numerosas casas de pueblo que requieren trabajos de retejado y rehabilitación. Atendemos con la misma rapidez que en Vitoria capital.',
       localInfo:
         'El casco histórico amurallado de Salvatierra conserva edificios protegidos con tejados de teja cerámica curva que requieren un tratamiento cuidadoso por su valor patrimonial. En el resto del municipio, ya en plena Llanada Oriental, predominan las viviendas unifamiliares y caseríos con cubiertas a dos aguas más expuestas al viento por la ausencia de relieve que las proteja.',
+      metaDescription:
+        'Retejados y rehabilitación de tejados en Salvatierra (Agurain), incluido su casco histórico amurallado. Presupuesto gratis.',
+      relatedBlogSlugs: ['como-saber-si-necesito-retejar', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Iruña de Oca',
@@ -710,6 +725,9 @@ export const site = {
         'Municipio limítrofe con Vitoria-Gasteiz, con fuerte crecimiento residencial en los últimos años. Atendemos tanto urbanizaciones nuevas como casas de pueblo en Nanclares de la Oca y el resto de núcleos.',
       localInfo:
         'El crecimiento urbanístico de Nanclares de la Oca en las últimas décadas ha traído urbanizaciones con tejados a dos y cuatro aguas de construcción reciente, mientras que en los núcleos más pequeños del municipio conviven todavía casas de pueblo tradicionales. Su cercanía a la A-1 y al polígono industrial también nos lleva a atender con frecuencia cubiertas de naves.',
+      metaDescription:
+        'Reparamos tejados en Nanclares de la Oca y el resto de núcleos de Iruña de Oca. Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['cuanto-cuesta-reparar-una-gotera', 'gotera-urgente-que-hacer'],
     },
     {
       name: 'Zuia',
@@ -718,6 +736,9 @@ export const site = {
         'El municipio de Zuia comprende varios núcleos en el valle del mismo nombre. Trabajamos en tejados de caseríos, viviendas unifamiliares y pequeños edificios rurales.',
       localInfo:
         'Situado al pie del Parque Natural de Gorbeia, Zuia tiene un microclima más húmedo que la Llanada, con presencia notable de musgo y líquenes sobre las tejas de los caseríos y viviendas rurales dispersas por sus distintos núcleos. Recomendamos revisiones anuales antes del otoño para evitar filtraciones durante la temporada de lluvias.',
+      metaDescription:
+        'Reparamos tejados de caseríos y viviendas en el valle de Zuia, junto al Parque Natural de Gorbeia. Presupuesto gratis.',
+      relatedBlogSlugs: ['senales-de-humedad-en-el-tejado', 'como-saber-si-necesito-retejar'],
     },
     {
       name: 'Aramaio',
@@ -726,6 +747,9 @@ export const site = {
         'Valle de Aramaio, en el extremo oriental de Álava. Atendemos los distintos núcleos del municipio con reparaciones de tejado, impermeabilizaciones y retejados en arquitectura tradicional vasca.',
       localInfo:
         'Al lindar con Gipuzkoa, Aramaio es uno de los valles con mayor pluviometría de Álava. Los baserris y caseríos tradicionales suelen tener cubiertas de teja curva o pizarra con pendientes pronunciadas pensadas para evacuar rápido el agua, y son las que más mantenimiento requieren tras los temporales de otoño e invierno.',
+      metaDescription:
+        'Reparación e impermeabilización de tejados en el valle de Aramaio, al este de Álava. Presupuesto gratis.',
+      relatedBlogSlugs: ['senales-de-humedad-en-el-tejado', 'gotera-urgente-que-hacer'],
     },
     {
       name: 'Asparrena',
@@ -734,6 +758,9 @@ export const site = {
         'Municipio de la Llanada Oriental que incluye Aretxabaleta, Araia, Urabain y otros núcleos. Trabajamos en tejados de casas rurales y edificios de pequeña altura.',
       localInfo:
         'En Asparrena, junto a la sierra de Elgea-Urkilla, combinamos trabajos en las viviendas y caseríos de los distintos núcleos del municipio con reparaciones en naves y edificios de pequeña altura, herencia de la actividad industrial y fabril histórica de la zona.',
+      metaDescription:
+        'Reparamos tejados en Asparrena: Aretxabaleta, Araia, Urabain y demás núcleos. Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['como-saber-si-necesito-retejar', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Alegría-Dulantzi',
@@ -742,6 +769,9 @@ export const site = {
         'Localidad de la Llanada con crecimiento urbanístico notable. Atendemos tanto viviendas de obra nueva como casas más antiguas que necesitan revisión o retejado.',
       localInfo:
         'Alegría-Dulantzi ha vivido un fuerte crecimiento residencial en las últimas dos décadas, por lo que buena parte de nuestro trabajo se centra en viviendas unifamiliares y adosados de obra relativamente reciente, sin descuidar el mantenimiento de los tejados de teja curva del casco antiguo.',
+      metaDescription:
+        'Reparamos tejados en Alegría-Dulantzi, en obra nueva y en el casco antiguo. Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['como-elegir-empresa-de-tejados', 'cuanto-cuesta-reparar-una-gotera'],
     },
     {
       name: 'Legutiano',
@@ -750,6 +780,9 @@ export const site = {
         'Municipio del valle de Barrundia-Legutio, junto al pantano de Uribide. Acceso en menos de 30 minutos desde Vitoria. Atendemos caseríos, viviendas y edificios en todo el municipio.',
       localInfo:
         'Junto al pantano de Uribide, Legutiano tiene un buen número de viviendas de segunda residencia que requieren revisión del tejado tras largas temporadas cerradas, además de los caseríos y chalets habitados todo el año en los distintos núcleos del valle de Barrundia-Legutio.',
+      metaDescription:
+        'Reparamos tejados en Legutiano y el valle de Barrundia-Legutio, junto al pantano de Uribide. Presupuesto gratis.',
+      relatedBlogSlugs: ['gotera-urgente-que-hacer', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Zigoitia',
@@ -758,6 +791,9 @@ export const site = {
         'Valle de Zigoitia, al sur de Vitoria. Con varios núcleos de población dispersos, es habitual el trabajo en caseríos y viviendas unifamiliares de tipología rural.',
       localInfo:
         'Con numerosos núcleos de población dispersos, Zigoitia concentra sobre todo caseríos y viviendas unifamiliares de tipología rural con cubiertas de teja curva envejecida, en las que el problema habitual suele ser el desgaste acumulado por el paso de los años más que un daño puntual.',
+      metaDescription:
+        'Reparamos tejados de caseríos y viviendas en los núcleos del valle de Zigoitia. Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['como-saber-si-necesito-retejar', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Barrundia',
@@ -766,6 +802,9 @@ export const site = {
         'Municipio del valle homónimo, al este de Vitoria. Atendemos tejados en Ozaeta, Guevara, Larrea y el resto de pequeños núcleos del municipio.',
       localInfo:
         'En Ozaeta, Guevara, Larrea y el resto de núcleos de Barrundia predominan las viviendas de piedra y el caserío tradicional propio de la Llanada, donde el principal problema suele ser el envejecimiento del tejado en construcciones con varias décadas de antigüedad y una revisión de mantenimiento aplazada durante demasiado tiempo.',
+      metaDescription:
+        'Reparamos tejados en Ozaeta, Guevara, Larrea y el resto de núcleos de Barrundia. Presupuesto gratis.',
+      relatedBlogSlugs: ['como-saber-si-necesito-retejar', 'cuanto-dura-un-tejado'],
     },
     {
       name: 'Arrazua-Ubarrundia',
@@ -774,6 +813,9 @@ export const site = {
         'Municipio que rodea el pantano de Ullibarri-Gamboa. Muchas de las viviendas son de segunda residencia y requieren revisiones y reparaciones periódicas de tejado.',
       localInfo:
         'Al rodear el pantano de Ullibarri-Gamboa, buena parte de las viviendas de Arrazua-Ubarrundia son segundas residencias junto al agua, lo que implica revisiones de tejado tras los periodos de cierre estacional y una humedad ambiental algo mayor que en el resto de la Llanada Alavesa.',
+      metaDescription:
+        'Reparamos tejados en Arrazua-Ubarrundia, en el entorno del pantano de Ullibarri-Gamboa. Presupuesto gratis.',
+      relatedBlogSlugs: ['gotera-urgente-que-hacer', 'senales-de-humedad-en-el-tejado'],
     },
     {
       name: 'Iruraiz-Gauna',
@@ -782,6 +824,9 @@ export const site = {
         'Municipio de la Llanada Alavesa que combina pequeños núcleos rurales con la carretera N-I. Trabajamos en todo tipo de tejados, desde caseríos tradicionales hasta construcciones más recientes.',
       localInfo:
         'Iruraiz-Gauna combina pequeños núcleos rurales con el paso de la N-I, y en él encontramos tanto caseríos tradicionales de la Llanada Alavesa como construcciones más recientes junto a la carretera, casi todas ellas con tejados a dos aguas de teja cerámica que revisamos con presupuesto previo sin coste.',
+      metaDescription:
+        'Reparamos tejados en Iruraiz-Gauna, en la Llanada Alavesa junto a la N-I. Presupuesto gratis y garantía por escrito.',
+      relatedBlogSlugs: ['cuanto-cuesta-reparar-una-gotera', 'como-elegir-empresa-de-tejados'],
     },
     {
       name: 'Elburgo (Burgelu)',
@@ -790,6 +835,9 @@ export const site = {
         'Pequeño municipio al sur de Vitoria-Gasteiz, en el acceso a la Llanada. Nos desplazamos sin coste adicional para presupuestar y realizar trabajos de tejado.',
       localInfo:
         'Al ser uno de los municipios más pequeños de Álava, en Elburgo las viviendas y caseríos se reparten de forma dispersa entre varios núcleos del acceso sur a la Llanada, por lo que un desplazamiento rápido es clave para presupuestar y actuar sin coste adicional para el vecino.',
+      metaDescription:
+        'Reparamos tejados en Elburgo (Burgelu), con desplazamiento sin coste adicional. Presupuesto gratis.',
+      relatedBlogSlugs: ['cuanto-cuesta-reparar-una-gotera', 'gotera-urgente-que-hacer'],
     },
     {
       name: 'Murgia',
@@ -798,6 +846,9 @@ export const site = {
         'Capital del municipio de Zuia, con acceso directo desde la autovía A-3132. Atendemos reparaciones urgentes e instalaciones en todo el entorno del valle.',
       localInfo:
         'Murgia concentra más densidad de vivienda que el resto del municipio de Zuia, con bloques de piso y viviendas unifamiliares que conviven con el clima húmedo característico del entorno de Gorbeia. Su acceso directo desde la A-3132 nos permite responder rápido a urgencias de goteras y desprendimiento de tejas.',
+      metaDescription:
+        'Reparamos tejados en Murgia, capital de Zuia, con acceso directo desde la A-3132. Presupuesto gratis.',
+      relatedBlogSlugs: ['senales-de-humedad-en-el-tejado', 'gotera-urgente-que-hacer'],
     },
     {
       name: 'Nanclares de la Oca (Langraiz Oka)',
@@ -806,6 +857,9 @@ export const site = {
         'Nanclares es el núcleo principal del municipio de Iruña de Oca, con una fuerte presencia industrial y residencial. Atendemos tanto naves como viviendas particulares.',
       localInfo:
         'Como núcleo principal de Iruña de Oca, Nanclares combina un fuerte tejido industrial junto a la A-1 con barrios residenciales de crecimiento reciente, por lo que atendemos tanto cubiertas de nave de chapa o fibrocemento como tejados de vivienda unifamiliar y bloque de piso.',
+      metaDescription:
+        'Reparamos tejados de vivienda y nave industrial en Nanclares de la Oca (Langraiz Oka). Presupuesto gratis.',
+      relatedBlogSlugs: ['cuanto-cuesta-reparar-una-gotera', 'como-elegir-empresa-de-tejados'],
     },
     {
       name: 'Berantevilla',
@@ -814,6 +868,9 @@ export const site = {
         'Municipio en la ribera del Ebro, al sur de Álava. Más lejano de Vitoria pero dentro de nuestra área de trabajo habitual. Atendemos previo acuerdo de desplazamiento.',
       localInfo:
         'En la ribera del Ebro, Berantevilla tiene un clima más seco y caluroso en verano que el resto de Álava, propio de la transición hacia La Rioja, con construcciones tradicionales de piedra que acumulan menos humedad pero sufren más las dilataciones térmicas del tejado por el contraste de temperaturas entre el día y la noche.',
+      metaDescription:
+        'Reparamos e instalamos tejados en Berantevilla, en la ribera del Ebro, con garantía por escrito. Presupuesto gratis y desplazamiento incluido.',
+      relatedBlogSlugs: ['cuanto-dura-un-tejado', 'como-saber-si-necesito-retejar'],
     },
   ] as Zone[],
 };

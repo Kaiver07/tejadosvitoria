@@ -5,7 +5,7 @@ import { site } from '../config/site.config';
 
 const title = `Política de Privacidad | ${site.name}`;
 const description = `Política de Privacidad de ${site.name}. Información sobre el tratamiento de datos personales conforme al RGPD (UE) 2016/679 y la LOPDGDD.`;
-const updated = '1 de julio de 2026';
+const updated = '25 de julio de 2026';
 ---
 
 <PageLayout title={title} description={description}>
@@ -23,15 +23,16 @@ const updated = '1 de julio de 2026';
         <h1 class="text-3xl font-bold text-brand-primary mb-2">Política de Privacidad</h1>
         <p class="text-sm text-gray-400 mb-4">Última actualización: {updated}</p>
         <p class="text-gray-600 leading-relaxed mb-10">
-          {site.legal.companyName} (en adelante, «nosotros» o «el Responsable») trata los datos personales que nos facilitas con pleno respeto a lo establecido en el Reglamento (UE) 2016/679, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD), y en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). La presente Política te informa de qué datos recogemos, para qué los utilizamos, cuánto tiempo los conservamos y cuáles son tus derechos.
+          {site.legal.legalName}, titular de {site.legal.tradeName} (en adelante, «nosotros» o «el Responsable»), trata los datos personales que nos facilitas con pleno respeto a lo establecido en el Reglamento (UE) 2016/679, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD), y en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). La presente Política te informa de qué datos recogemos, para qué los utilizamos, cuánto tiempo los conservamos y cuáles son tus derechos.
         </p>
 
         <!-- 1 -->
         <div class="mb-8">
           <h2 class="text-xl font-bold text-gray-900 mb-3">1. Responsable del tratamiento</h2>
           <div class="bg-gray-50 rounded-xl border border-gray-200 p-5 text-sm text-gray-700 space-y-1.5">
-            <p><span class="font-semibold w-44 inline-block">Entidad:</span> {site.legal.companyName}</p>
-            <p><span class="font-semibold w-44 inline-block">CIF:</span> {site.legal.cif}</p>
+            <p><span class="font-semibold w-44 inline-block">Titular:</span> {site.legal.legalName}</p>
+            <p><span class="font-semibold w-44 inline-block">Nombre comercial:</span> {site.legal.tradeName}</p>
+            <p><span class="font-semibold w-44 inline-block">NIF:</span> {site.legal.nif}</p>
             <p><span class="font-semibold w-44 inline-block">Domicilio:</span> {site.address.street}, {site.address.postalCode} {site.address.city}</p>
             <p><span class="font-semibold w-44 inline-block">Email de contacto:</span> <a href={`mailto:${site.email}`} class="text-brand-secondary">{site.email}</a></p>
             <p><span class="font-semibold w-44 inline-block">Teléfono:</span> <a href={`tel:${site.phone}`} class="text-brand-secondary">{site.phoneDisplay}</a></p>
@@ -106,7 +107,7 @@ const updated = '1 de julio de 2026';
         <div class="mb-8">
           <h2 class="text-xl font-bold text-gray-900 mb-3">5. Destinatarios y encargados del tratamiento</h2>
           <p class="text-gray-600 leading-relaxed mb-3">
-            No cedemos ni vendemos tus datos personales a terceros, salvo obligación legal o que sea necesario para la ejecución del servicio contratado. Con carácter general, solo acceden a tus datos los empleados y colaboradores de {site.legal.companyName} que necesitan conocerlos para prestar el servicio.
+            No cedemos ni vendemos tus datos personales a terceros, salvo obligación legal o que sea necesario para la ejecución del servicio contratado. Con carácter general, solo acceden a tus datos {site.legal.legalName} y los colaboradores que necesita para prestar el servicio.
           </p>
           <p class="text-gray-600 leading-relaxed mb-3">
             Como <strong>encargado del tratamiento</strong>, utilizamos el servicio de formularios de <strong>Web3Forms</strong> (web3forms.com), que actúa en nombre del Responsable para transmitir los mensajes enviados a través del formulario de contacto. Web3Forms está sujeto a un contrato de encargo del tratamiento conforme al artículo 28 RGPD y se compromete a no utilizar los datos para fines propios.

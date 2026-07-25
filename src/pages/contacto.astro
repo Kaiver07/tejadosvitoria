@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm.astro';
 import { site } from '../config/site.config';
 
 const title = `Contacto | ${site.name}`;
-const description = `Contacta con ${site.name}. ☎ ${site.phoneDisplay} · ${site.email} · ${site.hours}. Presupuesto gratuito sin compromiso.`;
+const description = `Contacta con ${site.name}. Llama al ${site.phoneDisplay}, presupuesto gratuito y respuesta en menos de 24 horas.`;
 ---
 
 <PageLayout title={title} description={description}>
@@ -30,6 +30,10 @@ const description = `Contacta con ${site.name}. ☎ ${site.phoneDisplay} · ${si
         <!-- Info de contacto -->
         <div>
           <h2 class="text-2xl font-bold text-brand-primary mb-6">Cómo Contactarnos</h2>
+
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Llevamos {site.yearsExperience} años reparando e instalando tejados en Vitoria-Gasteiz y toda la comarca de Álava. Ya sea una urgencia de gotera o un presupuesto sin prisa, respondemos a cualquier consulta —por teléfono, email o formulario— en menos de 24 horas, con desplazamiento incluido dentro de nuestra área de trabajo habitual.
+          </p>
 
           <div class="space-y-5">
             <div class="flex gap-4">
