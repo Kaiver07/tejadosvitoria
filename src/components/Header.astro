@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { site } from '../config/site.config';
 import WeatherWidget from './WeatherWidget.astro';
+import logoIcon from '../images/brand/logo-icon.png';
 
 const navLinks = [
   { label: 'Inicio',    href: '/' },
@@ -17,11 +19,8 @@ const navLinks = [
 
       <!-- Logo -->
       <a href="/" class="flex-shrink-0 flex items-center gap-2.5" aria-label={`${site.name} - inicio`}>
-        <!-- Icono tejado SVG -->
-        <div class="w-9 h-9 bg-brand-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" />
-          </svg>
+        <div class="w-11 h-11 bg-white rounded-lg flex items-center justify-center flex-shrink-0 p-1.5">
+          <Image src={logoIcon} alt="" width={80} height={80} class="w-full h-full object-contain" />
         </div>
         <div class="hidden sm:block leading-tight">
           <span class="text-white font-bold text-base block">{site.name}</span>
