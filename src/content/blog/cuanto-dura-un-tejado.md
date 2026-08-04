@@ -3,8 +3,8 @@ title: "Cuánto dura un tejado y cuándo toca cambiarlo"
 description: "Vida útil real de los materiales de cubierta más habituales en Álava (teja cerámica, pizarra, fibrocemento, chapa) y cuándo compensa cambiar el tejado."
 publishDate: 2026-07-14
 image:
-  src: "../../images/instalacion-tejados-nuevos-vitoria.webp"
-  alt: "Instalación de tejado nuevo con teja cerámica en Vitoria-Gasteiz"
+  src: "../../images/limpieza-musgo-tejado-vitoria.webp"
+  alt: "Mantenimiento y limpieza de musgo en un tejado de teja en Vitoria-Gasteiz"
 relatedServices:
   - "instalacion-de-tejados-nuevos"
   - "retejado-sustitucion-de-tejas"
