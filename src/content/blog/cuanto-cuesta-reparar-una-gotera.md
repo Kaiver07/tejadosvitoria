@@ -36,6 +36,6 @@ Estos precios son orientativos para el área de Vitoria-Gasteiz y Álava e inclu
 
 ## Por qué el diagnóstico gratuito importa más que el precio de tarifa
 
-En Tejados Vitoria Express no damos precios cerrados por teléfono sin ver el tejado, y desconfiamos de cualquier empresa que sí lo haga: una gotera casi nunca tiene una única causa visible, y presupuestar a ciegas suele terminar en sorpresas de precio a mitad de obra. Por eso hacemos siempre una inspección gratuita con diagnóstico fotográfico antes de dar cualquier cifra, y el presupuesto que firmamos es el precio final, sin añadidos posteriores salvo que aparezca algo que no era visible al empezar (y en ese caso, te lo enseñamos en foto antes de seguir).
+En Tejados Vitoria no damos precios cerrados por teléfono sin ver el tejado, y desconfiamos de cualquier empresa que sí lo haga: una gotera casi nunca tiene una única causa visible, y presupuestar a ciegas suele terminar en sorpresas de precio a mitad de obra. Por eso hacemos siempre una inspección gratuita con diagnóstico fotográfico antes de dar cualquier cifra, y el presupuesto que firmamos es el precio final, sin añadidos posteriores salvo que aparezca algo que no era visible al empezar (y en ese caso, te lo enseñamos en foto antes de seguir).
 
 Si tienes una gotera activa en Vitoria-Gasteiz o en cualquier municipio de Álava, llámanos y te damos cita en menos de 24 horas para valorarla sin compromiso.

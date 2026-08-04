@@ -39,6 +39,6 @@ Entendemos las ganas de "hacer algo" cuando hay una gotera activa, pero subir a 
 
 ## Cuándo es una urgencia que no puede esperar
 
-No todas las goteras requieren una visita esa misma noche, pero algunas señales sí indican que hace falta actuación inmediata: agua que entra en cantidad importante y no solo gotea, riesgo eléctrico cercano a la filtración, o un techo que se está hinchando y amenaza con ceder. En esos casos, en Tejados Vitoria Express atendemos urgencias 7 días a la semana, incluidos fines de semana y festivos, con respuesta en el menor tiempo posible.
+No todas las goteras requieren una visita esa misma noche, pero algunas señales sí indican que hace falta actuación inmediata: agua que entra en cantidad importante y no solo gotea, riesgo eléctrico cercano a la filtración, o un techo que se está hinchando y amenaza con ceder. En esos casos, en Tejados Vitoria atendemos urgencias 7 días a la semana, incluidos fines de semana y festivos, con respuesta en el menor tiempo posible.
 
 Si la gotera es más moderada y puede esperar a la mañana siguiente sin agravarse, igualmente te recomendamos llamar cuanto antes: como explicamos en nuestro artículo sobre [cuánto cuesta reparar una gotera](/blog/cuanto-cuesta-reparar-una-gotera/), cuanto antes se atiende, más sencilla y económica suele ser la reparación.

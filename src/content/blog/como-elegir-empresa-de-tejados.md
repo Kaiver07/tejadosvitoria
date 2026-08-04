@@ -27,7 +27,7 @@ Trabajar en altura conlleva riesgos, y los trabajos en tejados no son una excepc
 
 Una reparación o instalación de tejado es una inversión que se espera que dure años. Por eso, la garantía no debería ser una promesa verbal sino un documento que especifique qué cubre, durante cuánto tiempo y bajo qué condiciones.
 
-Hay diferencia entre la garantía del material (que depende del fabricante) y la garantía de la mano de obra (que depende de la empresa que ejecuta el trabajo). Ambas importan. Pregunta por las dos. Una empresa que trabaja bien no tiene problema en ofrecer garantía por escrito porque confía en lo que hace. En Tejados Vitoria Express, por ejemplo, todas las obras se documentan con garantía escrita, precisamente porque esa es la única forma de que el cliente tenga seguridad real, no solo palabras.
+Hay diferencia entre la garantía del material (que depende del fabricante) y la garantía de la mano de obra (que depende de la empresa que ejecuta el trabajo). Ambas importan. Pregunta por las dos. Una empresa que trabaja bien no tiene problema en ofrecer garantía por escrito porque confía en lo que hace. En Tejados Vitoria, por ejemplo, todas las obras se documentan con garantía escrita, precisamente porque esa es la única forma de que el cliente tenga seguridad real, no solo palabras.
 
 ## Pregunta qué materiales se van a usar y de dónde vienen
 
@@ -49,4 +49,4 @@ Esto no quiere decir que todas las empresas que pidan una señal sean sospechosa
 
 ---
 
-Si estás valorando contratar una reparación o instalación de tejado en Vitoria-Gasteiz o en cualquier municipio de Álava y tienes dudas, en Tejados Vitoria Express ofrecemos visita y presupuesto gratuito sin compromiso. Así puedes comparar con criterio real antes de decidir.
+Si estás valorando contratar una reparación o instalación de tejado en Vitoria-Gasteiz o en cualquier municipio de Álava y tienes dudas, en Tejados Vitoria ofrecemos visita y presupuesto gratuito sin compromiso. Así puedes comparar con criterio real antes de decidir.
