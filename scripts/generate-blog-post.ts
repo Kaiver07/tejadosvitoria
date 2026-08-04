@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'node:fs';
 import path from 'node:path';
 import { generateText } from 'ai';
-import { site } from '../src/config/site.config.ts';
+import { site } from '../src/config/site-core.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const CALENDAR_PATH = path.join(ROOT, 'src/content/blog-calendar.json');
