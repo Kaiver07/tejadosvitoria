@@ -12,7 +12,7 @@ export const site = {
   phoneDisplay: '945 49 29 39',
   email: 'info@reparaciondetejadosvitoria.es',
   address: {
-    street: 'Plaza de la Zumaquera, 15',
+    street: 'Paseo de la Zumaquera, 15',
     postalCode: '01006',
     city: 'Vitoria-Gasteiz',
     province: 'Álava',
