@@ -1,7 +1,17 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'node:fs';
 import path from 'node:path';
 import { generateText } from 'ai';
+import { createAnthropic } from '@ai-sdk/anthropic';
 import { site } from '../src/config/site-core.ts';
+
+// Las claves de Anthropic vinculadas a una identidad (en vez de a un espacio de
+// trabajo) exigen la cabecera anthropic-workspace-id. Las claves con ámbito de
+// workspace no la necesitan, así que solo se envía si la variable está definida.
+const anthropic = createAnthropic({
+  headers: process.env.ANTHROPIC_WORKSPACE_ID
+    ? { 'anthropic-workspace-id': process.env.ANTHROPIC_WORKSPACE_ID }
+    : undefined,
+});
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const CALENDAR_PATH = path.join(ROOT, 'src/content/blog-calendar.json');
@@ -65,7 +75,10 @@ Instrucciones de contenido para este artículo:
 ${entry.brief}`;
 
   const { text } = await generateText({
-    model: 'anthropic/claude-sonnet-4.6',
+    // Va directo a la API de Anthropic (clave en ANTHROPIC_API_KEY), sin pasar
+    // por el AI Gateway de Vercel: su plan gratuito no da acceso a los modelos
+    // de Claude, y el gasto se carga contra los créditos de Anthropic.
+    model: anthropic('claude-opus-5'),
     system: systemPrompt,
     prompt: userPrompt,
   });

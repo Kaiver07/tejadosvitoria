@@ -28,7 +28,11 @@ jobs:
       - name: Generar artículo del calendario editorial
         id: generate
         env:
-          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          # Llamada directa a la API de Anthropic, sin el AI Gateway de Vercel.
+          # El nombre de la variable lo impone @ai-sdk/anthropic.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Solo hace falta si la clave está vinculada a identidad.
+          ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
         run: npm run generate-blog-post
 
       - name: Commit y push del nuevo artículo
