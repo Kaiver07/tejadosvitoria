@@ -90,7 +90,8 @@
       "reparacion-de-goteras-y-humedades"
     ],
     "brief": "Explicar de forma sencilla qué es la cámara de ventilación bajo la teja y para qué sirve: evacuar el vapor de agua que sube desde el interior de la vivienda y evitar que se condense contra la cara interior de la cubierta, además de regular la temperatura bajo teja en verano. Explicar qué pasa cuando falla: condensación que moja el aislamiento y la madera desde dentro (a menudo confundida con una gotera), moho en el desván, deterioro prematuro del rastrelado. Dar señales de alarma: olor a humedad en el desván sin lluvia reciente, gotas de condensación visibles en tejas o correas en días fríos. Explicar que la solución suele ser revisar las entradas de aire en el alero y la salida en la cumbrera. 600-800 palabras, con H2. No incluyas enlaces internos ni markdown de enlaces.",
-    "status": "pending"
+    "status": "published",
+    "publishedDate": "2026-09-14"
   },
   {
     "slug": "canalones-obstruidos-sintomas-y-riesgos",
