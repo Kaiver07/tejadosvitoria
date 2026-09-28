@@ -122,7 +122,8 @@
       "instalacion-de-tejados-nuevos"
     ],
     "brief": "Este artículo no trata de vender ni instalar placas solares (no es un servicio que ofrecemos), sino de advertir sobre un problema habitual: instalar placas solares sobre un tejado que ya tenía problemas de base, lo que obliga a desmontar la instalación fotovoltaica para poder reparar el tejado después, con el sobrecoste que eso supone. Recomendar hacer una revisión completa del estado del tejado (teja, rastrelado, posibles humedades) antes de instalar placas solares, no después. Explicar también que el peso y los anclajes de las placas deben ser valorados por el instalador solar en conjunto con el estado estructural del tejado. Tono informativo y neutral, sin criticar a instaladores solares. 500-700 palabras, con H2. No incluyas enlaces internos ni markdown de enlaces.",
-    "status": "pending"
+    "status": "published",
+    "publishedDate": "2026-09-28"
   },
   {
     "slug": "claraboyas-y-velux-ventajas-y-problemas-comunes",
