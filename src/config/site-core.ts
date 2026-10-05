@@ -37,7 +37,6 @@ export const site = {
   lang: 'es',
   schemaType: 'RoofingContractor',
   formAccessKey: '4155ef0e-f3ca-45d8-84df-9332924fafb0',
-  gaMeasurementId: 'G-M2Q34T9BJ3',
 
   // SEO defaults
   defaultTitle: 'Reparación de Tejados Vitoria-Gasteiz | 945 49 29 39',
