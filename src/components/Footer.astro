@@ -93,7 +93,8 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="border-t border-white/20 mt-10 pt-6 text-sm text-gray-400 flex flex-col sm:flex-row justify-between gap-2">
-      <p>© {year} {site.legal.legalName} ({site.legal.tradeName}) · NIF {site.legal.nif}</p>
+      <!-- PERSONALIZADO: razón social y NIF fuera del pie; están en el aviso legal (06/10/2026) -->
+      <p>© {year} {site.legal.tradeName} · <a href="/aviso-legal/" class="hover:text-white transition-colors">Datos del titular en el Aviso Legal</a></p>
       <p>{site.address.city} · {site.address.province} · España</p>
     </div>
   </div>
