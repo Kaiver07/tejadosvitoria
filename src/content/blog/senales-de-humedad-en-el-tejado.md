@@ -1,5 +1,6 @@
 ---
 title: "Señales de humedad en el tejado que no debes ignorar"
+seoTitle: "Humedad en el tejado: señales para detectarla a tiempo"
 description: "Cómo identificar a tiempo la humedad en el tejado antes de que dañe la estructura: manchas, olores, condensación y otros avisos habituales en Álava."
 publishDate: 2026-07-01
 image:

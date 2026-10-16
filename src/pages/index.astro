@@ -30,11 +30,33 @@ const galeriaTrabajos = [
 const latestPosts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .slice(0, 3);
+
+const homeFaqs = [
+  {
+    q: '¿Qué diferencia hay entre reparar y rehabilitar un tejado?',
+    a: 'Reparar es corregir un daño concreto: tejas rotas, una gotera o un canalón suelto. Rehabilitar es renovar la cubierta completa o gran parte de ella: estructura, aislamiento, impermeabilización y teja. En la visita para el presupuesto, que es gratis, te decimos cuál necesita tu tejado.',
+  },
+  {
+    q: '¿Atendéis urgencias por goteras?',
+    a: `Sí, hay servicio de urgencias 24 h en Vitoria-Gasteiz. Llama al ${site.phoneDisplay}.`,
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};
 ---
 
 <PageLayout
   title={site.defaultTitle}
   description={site.defaultDescription}
+  schema={faqSchema}
 >
 
   <!-- ======================== HERO ======================== -->
@@ -64,7 +86,7 @@ const latestPosts = (await getCollection('blog', ({ data }) => !data.draft))
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-5">
-            Tejados<br />
+            Tejados en<br />
             <span class="text-brand-secondary">Vitoria-Gasteiz</span><br />
             <span class="text-3xl sm:text-4xl font-bold text-gray-200">Reparación de Tejados</span>
           </h1>
@@ -302,6 +324,21 @@ const latestPosts = (await getCollection('blog', ({ data }) => !data.draft))
       </div>
     </section>
   )}
+
+  <!-- ======================== PREGUNTAS FRECUENTES ======================== -->
+  <section class="section-padding bg-white">
+    <div class="section-container max-w-3xl">
+      <h2 class="text-2xl lg:text-3xl font-bold text-brand-primary mb-6 text-center">
+        Preguntas Frecuentes sobre Tejados en Vitoria-Gasteiz
+      </h2>
+      {homeFaqs.map((faq) => (
+        <div class="border border-gray-200 rounded-lg p-5 mb-3">
+          <h3 class="font-semibold text-gray-800 mb-2">{faq.q}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 
   <!-- ======================== GALERÍA ======================== -->
   <section class="section-padding bg-gray-50">

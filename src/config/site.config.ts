@@ -120,7 +120,7 @@ export const site = {
       slug: 'instalacion-de-tejados-nuevos',
       name: 'Instalación de Tejados Nuevos',
       shortDesc: 'Instalamos tejados nuevos a medida con materiales de primera calidad adaptados al clima de Álava.',
-      title: 'Tejados Nuevos en Vitoria-Gasteiz | 945 49 29 39',
+      title: 'Instalación de Tejados Nuevos en Vitoria | 945 49 29 39',
       metaDescription:
         'Instalación de tejados nuevos en Vitoria-Gasteiz con teja cerámica, hormigón o pizarra. Presupuesto gratis y garantía de 10 años.',
       h1: 'Instalación de Tejados Nuevos en Vitoria-Gasteiz',
@@ -171,9 +171,9 @@ export const site = {
       slug: 'impermeabilizacion-de-cubiertas',
       name: 'Impermeabilización de Cubiertas',
       shortDesc: 'Impermeabilizamos cubiertas planas e inclinadas con sistemas de larga duración y garantía de estanqueidad.',
-      title: 'Impermeabilizar Cubierta en Vitoria | 945 49 29 39',
+      title: 'Impermeabilización de Cubiertas y Tejados en Vitoria',
       metaDescription:
-        'Impermeabilización de cubiertas planas e inclinadas en Vitoria-Gasteiz. Garantía de estanqueidad de 10 años. Presupuesto sin compromiso.',
+        'Impermeabilización de cubiertas planas e inclinadas en Vitoria: láminas y pintura elastomérica o transitable. Garantía de estanqueidad de 10 años.',
       h1: 'Impermeabilización de Cubiertas en Vitoria-Gasteiz',
       content: {
         intro: [
@@ -207,6 +207,14 @@ export const site = {
           {
             q: '¿Puedo impermeabilizar mi azotea para usarla como terraza?',
             a: 'Sí. Aplicamos sistemas de impermeabilización transitables con capa de acabado antideslizante apta para uso peatonal. También instalamos cubiertas invertidas con grava o cubierta vegetal extensiva para terrazas ajardinadas.',
+          },
+          {
+            q: '¿Sirve la pintura elastomérica para impermeabilizar una cubierta?',
+            a: 'Sí, en cubiertas planas con el soporte en buen estado o como mantenimiento de una impermeabilización existente. Forma una membrana continua y elástica que absorbe las dilataciones y dura de 10 a 15 años con mantenimiento. Si hay charcos, fisuras grandes o la lámina está rota, primero hay que reparar el soporte.',
+          },
+          {
+            q: '¿Qué es una pintura impermeable transitable?',
+            a: 'Es un revestimiento impermeable que, una vez curado, se puede pisar. Se usa en terrazas y azoteas de uso habitual, donde una pintura no transitable se desgastaría con el paso.',
           },
         ],
       },
@@ -542,7 +550,7 @@ export const site = {
       slug: 'cubierta-con-panel-sandwich',
       name: 'Cubierta con Panel Sándwich',
       shortDesc: 'Instalamos cubiertas con panel sándwich aislante para naves, viviendas y ampliaciones industriales.',
-      title: 'Panel Sándwich Vitoria-Gasteiz | 945 49 29 39',
+      title: 'Cubierta de Panel Sándwich en Vitoria | 945 49 29 39',
       metaDescription:
         'Cubiertas de panel sándwich en Vitoria-Gasteiz desde 45 €/m², con aislamiento incluido e instalación rápida. Presupuesto gratis.',
       h1: 'Cubierta con Panel Sándwich en Vitoria-Gasteiz',
