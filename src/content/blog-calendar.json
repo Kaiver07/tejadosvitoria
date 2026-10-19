@@ -168,7 +168,8 @@
       "rehabilitacion-de-fachadas"
     ],
     "brief": "Explicar las señales típicas de que una fachada necesita rehabilitación: grietas que crecen con el tiempo, desprendimiento de revoco o pintura, manchas de humedad que suben desde la base (humedad por capilaridad) o que bajan desde el remate de cubierta (mal sellado entre tejado y fachada), eflorescencias blancas en la piedra o el ladrillo. Explicar que muchas humedades de fachada en realidad vienen de un problema en el encuentro con el tejado (canalón mal fijado, remate de chimenea, etc.) y no de la fachada en sí, por lo que conviene revisar ambos a la vez. Mencionar que suele incluir limpieza de la superficie, reparación de grietas, tratamiento de humedades e impermeabilización o pintura transpirable final. 600-800 palabras, con H2. No incluyas enlaces internos ni markdown de enlaces.",
-    "status": "pending"
+    "status": "published",
+    "publishedDate": "2026-10-19"
   },
   {
     "slug": "mantenimiento-de-cubiertas-industriales-y-naves",
