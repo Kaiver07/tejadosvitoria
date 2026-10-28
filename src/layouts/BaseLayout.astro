@@ -1,6 +1,12 @@
 ---
 import { site } from '../config/site.config';
+import logoIcon from '../images/brand/logo-icon.png';
 import '../styles/global.css';
+
+// schema.org solo admite el nombre completo del día (Monday…), no la abreviatura.
+const dayNames: Record<string, string> = {
+  Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday',
+};
 
 interface Props {
   title?: string;
@@ -27,6 +33,7 @@ const localBusinessSchema = {
   '@id': `${site.url}/#business`,
   name: site.name,
   image: ogImageURL.toString(),
+  logo: new URL(logoIcon.src, Astro.site).toString(),
   telephone: site.phone,
   email: site.email,
   url: site.url,
@@ -45,7 +52,7 @@ const localBusinessSchema = {
   },
   openingHoursSpecification: site.openingHours.map((h) => ({
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: h.days.map((d) => `https://schema.org/${d}`),
+    dayOfWeek: h.days.map((d) => `https://schema.org/${dayNames[d] ?? d}`),
     opens: h.opens,
     closes: h.closes,
   })),
@@ -54,7 +61,8 @@ const localBusinessSchema = {
     name: z.name,
   })),
   priceRange: site.priceRange,
-  sameAs: [site.social.facebook, site.social.instagram],
+  // La ficha de Google primero: es la que une la web con el negocio en Maps.
+  sameAs: [site.googleBusinessUrl, site.social.facebook, site.social.instagram].filter(Boolean),
 };
 
 const schemas = [

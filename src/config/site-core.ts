@@ -19,14 +19,14 @@ export const site = {
     region: 'País Vasco',
     country: 'ES',
   },
-  geo: { lat: 42.8358, lng: -2.665 },
+  geo: { lat: 42.8365118, lng: -2.6701606 }, // marcador de la ficha de Google (28/10/2026)
   social: {
     facebook: 'https://www.facebook.com/people/Reparaci%C3%B3n-de-Tejados-Vitoria/61592724928709/',
     instagram: 'https://www.instagram.com/reparaciondetejadosvitoria/',
   },
   // Nombre indexado en el perfil de Google Business (puede diferir del `name` de marca)
   googleBusinessName: 'Tejados Vitoria-Gasteiz',
-  googleBusinessUrl: 'https://share.google/L7dgYUOTwKTGSHXfK',
+  googleBusinessUrl: 'https://www.google.com/maps?cid=14714358764082626997', // enlace fijo de la ficha (antes https://share.google/L7dgYUOTwKTGSHXfK)
   hours: 'Lun–Dom 7:00–21:00 · Urgencias 24h',
   openingHours: [{ days: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], opens: '07:00', closes: '21:00' }],
   yearsExperience: 18,
